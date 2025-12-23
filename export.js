@@ -1,4 +1,3 @@
-```javascript
 // Export page functionality
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -278,4 +277,3 @@ window.exportUtils = {
         // Implement scheduled export
     }
 };
-```

@@ -1,6 +1,5 @@
-```javascript
 /**
- * app.js - MockaMint Studio Core UI Controller
+ * app.js - Mocka Mint Studio Core UI Controller
  * 
  * Responsibilities:
  * - Highlight active nav links based on current pathname
@@ -627,7 +626,7 @@
         initGenerationFlow();
         initExportFlow();
         
-        console.log('MockaMint Studio initialized');
+        console.log('Mocka Mint Studio initialized');
     }
 
     // ============================================
@@ -648,4 +647,3 @@
     init();
 
 })();
-```

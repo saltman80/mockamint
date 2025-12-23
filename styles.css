@@ -1,6 +1,5 @@
-```css
 /**
- * styles.css - MockaMint Studio Global Stylesheet
+ * styles.css - Mocka Mint Studio Global Stylesheet
  * 
  * Implements:
  * - Design tokens (colors, typography, spacing, sizing)
@@ -1285,4 +1284,3 @@ button:focus-visible {
         box-shadow: none;
     }
 }
-```
