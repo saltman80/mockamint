@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,514 @@
     <meta name="description" content="Theme and Input page for MockaMint Studio - Design your website with AI-powered tools">
     <title>Theme and Input | MockaMint Studio</title>
     <link rel="canonical" href="https://mockamintstudio.com/theme">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --color-mint: #9DD9C8;
+            --color-charcoal: #2B2B2B;
+            --color-warm-gray: #666666;
+            --color-white: #FFFFFF;
+            --color-beige: #E8E3DB;
+            --color-off-white: #F8F8F8;
+            --color-light-gray: #CCCAC3;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 40px;
+            --spacing-3xl: 48px;
+            --spacing-4xl: 64px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50%;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--color-beige);
+            color: var(--color-charcoal);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: var(--spacing-sm);
+            background-color: var(--color-mint);
+            color: var(--color-charcoal);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .skip-link:focus {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--color-white);
+            padding: var(--spacing-lg) var(--spacing-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+            color: var(--color-charcoal);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-brand svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-charcoal);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-mint);
+        }
+
+        .nav-links svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .btn-login {
+            background-color: var(--color-mint);
+            color: var(--color-charcoal);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-xl);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-login:hover {
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: var(--spacing-2xl);
+            flex: 1;
+        }
+
+        /* Page Title */
+        .page-title {
+            font-size: 56px;
+            font-weight: bold;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.1;
+        }
+
+        /* Theme Input Section */
+        .theme-input-section {
+            background-color: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .input-wrapper {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .theme-input {
+            width: 100%;
+            padding: var(--spacing-lg);
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--radius-md);
+            font-size: 20px;
+            color: var(--color-charcoal);
+            background-color: var(--color-white);
+            transition: border-color 0.2s;
+        }
+
+        .theme-input:focus {
+            outline: none;
+            border-color: var(--color-mint);
+        }
+
+        .theme-input::placeholder {
+            color: var(--color-warm-gray);
+            opacity: 0.6;
+        }
+
+        /* Tag Selection */
+        .tag-selection {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .tag-btn {
+            background-color: var(--color-mint);
+            color: var(--color-charcoal);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-xl);
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .tag-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .tag-btn.selected {
+            background-color: var(--color-charcoal);
+            color: var(--color-white);
+        }
+
+        /* Upload Options Grid */
+        .upload-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .upload-card {
+            background-color: var(--color-off-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .upload-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .upload-card.active {
+            border-color: var(--color-mint);
+            background-color: var(--color-white);
+        }
+
+        .upload-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--color-mint);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--color-charcoal);
+        }
+
+        .upload-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-charcoal);
+        }
+
+        /* Summary Card */
+        .summary-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            max-width: 300px;
+            margin-left: auto;
+        }
+
+        .summary-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+            font-size: 15px;
+        }
+
+        .summary-label {
+            color: var(--color-charcoal);
+            font-weight: 500;
+        }
+
+        .summary-value {
+            color: var(--color-charcoal);
+            font-weight: bold;
+        }
+
+        /* Prompt Tips */
+        .prompt-tips {
+            background-color: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            margin-top: var(--spacing-xl);
+        }
+
+        .prompt-tips-header {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .prompt-tips-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding-left: var(--spacing-md);
+        }
+
+        .tips-list li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-charcoal);
+            font-size: 14px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .tips-list li::before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            color: var(--color-mint);
+            font-weight: bold;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-sm);
+        }
+
+        .example-item {
+            width: 72px;
+            height: 72px;
+            background-color: var(--color-light-gray);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .example-item:hover {
+            transform: scale(1.05);
+        }
+
+        .example-item svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--color-warm-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-white);
+            padding: var(--spacing-xl) var(--spacing-2xl);
+            margin-top: auto;
+            border-top: 1px solid var(--color-light-gray);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .footer-links a {
+            color: var(--color-charcoal);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-mint);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .footer-social a {
+            color: var(--color-charcoal);
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover {
+            color: var(--color-mint);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-copyright {
+            text-align: right;
+            font-size: 13px;
+            color: var(--color-warm-gray);
+            margin-left: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .upload-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .prompt-tips-content {
+                grid-template-columns: 1fr;
+            }
+
+            .example-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: var(--spacing-md) var(--spacing-lg);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: var(--spacing-lg);
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .theme-input-section {
+                padding: var(--spacing-lg);
+            }
+
+            .upload-options {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-card {
+                max-width: 100%;
+                margin-left: 0;
+            }
+
+            .example-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+
+            .footer-copyright {
+                text-align: center;
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <nav role="navigation" aria-label="Main navigation" data-mm-nav>
+    <nav role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav-brand" aria-label="MockaMint Studio Home">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M8 4L4 6V26L8 28V4Z" fill="#9DD9C8"/>
@@ -20,41 +523,34 @@
             </svg>
             <span>MockaMint Studio</span>
         </a>
-        <div class="nav-links">
-            <a href="./index.html" data-mm-nav-link data-mm-route="index">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Features
-            </a>
-            <a href="./theme.html" data-mm-nav-link data-mm-route="theme">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Theme
-            </a>
-            <a href="./generator.html" data-mm-nav-link data-mm-route="generator">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Generator
-            </a>
-            <a href="./product.html" data-mm-nav-link data-mm-route="product">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                Product
-            </a>
-            <a href="./export.html" data-mm-nav-link data-mm-route="export">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <polyline points="8 9 12 5 16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Export
-            </a>
-        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Features
+                </a>
+            </li>
+            <li>
+                <a href="#pricing">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Pricing
+                </a>
+            </li>
+            <li>
+                <a href="#about">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    About
+                </a>
+            </li>
+        </ul>
         <div class="nav-actions">
             <a href="#login" class="btn-login">Login</a>
         </div>
@@ -70,25 +566,24 @@
                     <input 
                         type="text" 
                         id="theme-input"
-                        class="theme-input"
-                        data-mm-theme-text
+                        class="theme-input" 
                         placeholder="Mint minimal geometry" 
                         aria-label="Enter your website theme"
                         value="Mint minimal geometry"
                     >
                 </div>
                 <div class="tag-selection" role="group" aria-label="Theme tag selection">
-                    <button class="tag-btn selected" data-tag="minimalist" data-mm-tag-chip aria-pressed="true">Minimalist</button>
-                    <button class="tag-btn selected" data-tag="geometric" data-mm-tag-chip aria-pressed="true">Geometric</button>
-                    <button class="tag-btn selected" data-tag="modern" data-mm-tag-chip aria-pressed="true">Modern</button>
-                    <button class="tag-btn selected" data-tag="young-adults" data-mm-tag-chip aria-pressed="true">Young Adults</button>
+                    <button class="tag-btn selected" data-tag="minimalist">Minimalist</button>
+                    <button class="tag-btn selected" data-tag="geometric">Geometric</button>
+                    <button class="tag-btn selected" data-tag="modern">Modern</button>
+                    <button class="tag-btn selected" data-tag="young-adults">Young Adults</button>
                 </div>
             </section>
 
             <section class="upload-options" aria-labelledby="upload-heading">
                 <h2 id="upload-heading" class="visually-hidden">Upload Options</h2>
                 
-                <article class="upload-card" role="button" tabindex="0" aria-label="Drag and drop files" data-mm-upload-tile>
+                <article class="upload-card" role="button" tabindex="0" aria-label="Drag and drop files">
                     <div class="upload-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -97,7 +592,7 @@
                     <h3 class="upload-card-title">Drag and Drop Files</h3>
                 </article>
 
-                <article class="upload-card" role="button" tabindex="0" aria-label="Choose files from device" data-mm-upload-tile>
+                <article class="upload-card" role="button" tabindex="0" aria-label="Choose files from device">
                     <div class="upload-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,7 +602,7 @@
                     <h3 class="upload-card-title">Choose Files</h3>
                 </article>
 
-                <article class="upload-card" role="button" tabindex="0" aria-label="Import from URL" data-mm-upload-tile>
+                <article class="upload-card" role="button" tabindex="0" aria-label="Import from URL">
                     <div class="upload-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -118,7 +613,7 @@
                 </article>
             </section>
 
-            <aside class="summary-card" aria-labelledby="summary-heading" data-mm-theme-sidebar>
+            <aside class="summary-card" aria-labelledby="summary-heading">
                 <h2 id="summary-heading" class="summary-title">Summary</h2>
                 <div class="summary-row">
                     <span class="summary-label">Progress:</span>
@@ -227,8 +722,184 @@
         </div>
     </footer>
 
-    <div data-mm-toasts aria-live="polite" role="status"></div>
+    <script>
+        // Active navigation highlighting
+        (function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (currentPath === linkPath || (currentPath.includes('theme') && linkPath.includes('theme'))) {
+                    link.classList.add('active');
+                }
+            });
+        })();
 
-    <script src="./app.js" defer></script>
+        // Tag button selection
+        const tagButtons = document.querySelectorAll('.tag-btn');
+        tagButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('selected');
+                updateSummary();
+            });
+        });
+
+        // Upload card selection
+        const uploadCards = document.querySelectorAll('.upload-card');
+        uploadCards.forEach(card => {
+            card.addEventListener('click', function() {
+                uploadCards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                updateSummary();
+            });
+
+            // Keyboard support
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Theme input handling
+        const themeInput = document.getElementById('theme-input');
+        themeInput.addEventListener('input', function() {
+            updateSummary();
+        });
+
+        // Example design selection
+        const exampleItems = document.querySelectorAll('.example-item');
+        exampleItems.forEach((item, index) => {
+            item.addEventListener('click', function() {
+                console.log('Example design selected:', index + 1);
+                // Future: Load example design into input
+            });
+        });
+
+        // Update summary based on selections
+        function updateSummary() {
+            const selectedTags = document.querySelectorAll('.tag-btn.selected').length;
+            const activeUpload = document.querySelector('.upload-card.active');
+            const inputValue = themeInput.value.trim();
+            
+            let progress = 0;
+            if (inputValue.length > 0) progress += 10;
+            if (selectedTags > 0) progress += 5 * selectedTags;
+            if (activeUpload) progress += 15;
+            
+            progress = Math.min(progress, 100);
+            
+            const progressValue = document.querySelector('.summary-value');
+            if (progressValue) {
+                progressValue.textContent = progress + '%';
+            }
+            
+            // Estimate time based on progress
+            const timeValue = document.querySelectorAll('.summary-value')[1];
+            if (timeValue) {
+                const estimatedMins = Math.max(1, Math.ceil((100 - progress) / 20));
+                timeValue.textContent = estimatedMins + ' min' + (estimatedMins > 1 ? 's' : '');
+            }
+        }
+
+        // Initialize summary
+        updateSummary();
+
+        // Drag and drop functionality
+        const dragDropCard = uploadCards[0];
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dragDropCard.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dragDropCard.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dragDropCard.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight() {
+            dragDropCard.style.borderColor = 'var(--color-mint)';
+            dragDropCard.style.backgroundColor = 'var(--color-white)';
+        }
+
+        function unhighlight() {
+            dragDropCard.style.borderColor = 'transparent';
+            dragDropCard.style.backgroundColor = 'var(--color-off-white)';
+        }
+
+        dragDropCard.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files.length > 0) {
+                console.log('Files dropped:', files.length);
+                dragDropCard.classList.add('active');
+                updateSummary();
+                // Future: Handle file upload
+            }
+        }
+
+        // Choose files functionality
+        const chooseFilesCard = uploadCards[1];
+        chooseFilesCard.addEventListener('click', function() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.multiple = true;
+            fileInput.accept = 'image/*,.pdf,.doc,.docx';
+            
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    console.log('Files selected:', e.target.files.length);
+                    chooseFilesCard.classList.add('active');
+                    updateSummary();
+                    // Future: Handle file upload
+                }
+            });
+            
+            fileInput.click();
+        });
+
+        // Import from URL functionality
+        const urlCard = uploadCards[2];
+        urlCard.addEventListener('click', function() {
+            const url = prompt('Enter the URL:');
+            if (url && url.trim()) {
+                console.log('URL entered:', url);
+                urlCard.classList.add('active');
+                updateSummary();
+                // Future: Handle URL import
+            }
+        });
+
+        // Accessibility: Visual hidden utility
+        const style = document.createElement('style');
+        style.textContent = `
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
+```
