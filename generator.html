@@ -1,35 +1,554 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mocka Mint Website Generator - Create stunning websites with AI-powered design tools">
-    <title>Website Generator | Mocka Mint</title>
+    <meta name="description" content="SiteSketch AI Website Generator - Create stunning websites with AI-powered design tools">
+    <title>Website Generator | SiteSketch AI</title>
     <link rel="canonical" href="/website_generator.html">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #E8E3DB;
+            color: #2B2B2B;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #2B2B2B;
+            padding: 16px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #9DD9C8;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login:hover {
+            background: #FFFFFF;
+            color: #2B2B2B;
+        }
+
+        .btn-primary {
+            background: #9DD9C8;
+            color: #2B2B2B;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.85;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            flex: 1;
+            min-width: 180px;
+            padding: 12px 16px;
+            border: 1px solid #D0C8BE;
+            border-radius: 8px;
+            background: #FFFFFF;
+            font-size: 14px;
+            color: #2B2B2B;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%232B2B2B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .filter-select:focus {
+            outline: 2px solid #9DD9C8;
+            outline-offset: 2px;
+        }
+
+        /* Main Layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-section {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2B2B2B;
+            margin-bottom: 16px;
+        }
+
+        .theme-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #D0C8BE;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #2B2B2B;
+            background: #F8F8F8;
+        }
+
+        .theme-input:focus {
+            outline: 2px solid #9DD9C8;
+            outline-offset: 2px;
+            background: #FFFFFF;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .image-thumb {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #F8F8F8;
+        }
+
+        .image-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .product-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #F0EBE3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2B2B2B;
+            margin-bottom: 12px;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        .btn-generate {
+            background: #9DD9C8;
+            color: #2B2B2B;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-generate:hover {
+            opacity: 0.85;
+        }
+
+        /* Status Section */
+        .status-section {
+            margin-top: 64px;
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .status-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .status-label {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 8px;
+        }
+
+        .status-value {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2B2B2B;
+            margin-bottom: 8px;
+        }
+
+        .status-progress-label {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 16px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #F0EBE3;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #9DD9C8;
+            transition: width 0.5s ease;
+        }
+
+        .history-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .history-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #F0EBE3;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-icon {
+            width: 20px;
+            height: 20px;
+            color: #9DD9C8;
+        }
+
+        .history-text {
+            flex: 1;
+        }
+
+        .history-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2B2B2B;
+        }
+
+        .history-time {
+            font-size: 13px;
+            color: #666666;
+        }
+
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2B2B2B;
+            color: #FFFFFF;
+            padding: 40px;
+            margin-top: 64px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #9DD9C8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #9DD9C8;
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-copyright {
+            text-align: right;
+        }
+
+        .footer-note {
+            font-size: 13px;
+            color: #999999;
+            margin-bottom: 4px;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: #999999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .product-grid,
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .product-grid,
+            .status-grid,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+            }
+
+            .filter-select {
+                width: 100%;
+            }
+
+            .main-container {
+                padding: 24px 16px;
+            }
+
+            .status-value {
+                font-size: 36px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+
+            .footer-copyright {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip Link -->
     <a href="#main-content" style="position: absolute; left: -9999px; z-index: 999;">Skip to main content</a>
 
-    <div data-mm-toasts aria-live="polite" aria-atomic="true" class="mm-toasts"></div>
-
     <!-- Navigation -->
-    <nav data-mm-nav role="navigation" aria-label="Main navigation">
+    <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo" aria-label="Mocka Mint Home">
+            <a href="index.html" class="nav-logo" aria-label="SiteSketch AI Home">
                 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 4L4 10V22L16 28L28 22V10L16 4Z" fill="#9DD9C8"/>
                     <path d="M16 4V16M16 16L4 10M16 16L28 10M16 16V28M4 22L16 28M28 22L16 28" stroke="#2B2B2B" stroke-width="2"/>
                 </svg>
-                <span>Mocka Mint</span>
+                <span>SiteSketch AI</span>
             </a>
             <ul class="nav-links">
-                <li><a href="./index.html" data-mm-nav-link data-mm-route="index">Home</a></li>
-                <li><a href="./theme.html" data-mm-nav-link data-mm-route="theme">Brand Setup</a></li>
-                <li><a href="./product.html" data-mm-nav-link data-mm-route="product">Brand Assets</a></li>
-                <li><a href="./generator.html" data-mm-nav-link data-mm-route="generator" aria-current="page">Website Generator</a></li>
-                <li><a href="./export.html" data-mm-nav-link data-mm-route="export">Update Website</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="brand_setup.html">Brand Setup</a></li>
+                <li><a href="brand_assets.html">Brand Assets</a></li>
+                <li><a href="website_generator.html" aria-current="page">Website Generator</a></li>
+                <li><a href="update_website.html">Update Website</a></li>
             </ul>
             <div class="nav-buttons">
                 <a href="#login" class="btn-login">Login</a>
@@ -41,7 +560,7 @@
     <!-- Main Content -->
     <main id="main-content" class="main-container">
         <!-- Filter Bar -->
-        <div class="filter-bar" data-mm-filter role="search" aria-label="Product filters">
+        <div class="filter-bar" role="search" aria-label="Product filters">
             <select class="filter-select" aria-label="Filter by product type">
                 <option>Product Type</option>
                 <option>Mugs</option>
@@ -80,11 +599,11 @@
             <aside class="sidebar" role="complementary" aria-label="Generation controls">
                 <div class="sidebar-section">
                     <h3>Theme and Input</h3>
-                    <input type="text" class="theme-input" value="Mint minimal geometry" aria-label="Design theme input" data-mm-theme-text>
+                    <input type="text" class="theme-input" value="Mint minimal geometry" aria-label="Design theme input">
                 </div>
                 <div class="sidebar-section">
                     <h3>Uploaded Images</h3>
-                    <div class="image-grid" data-mm-thumbnail-list>
+                    <div class="image-grid">
                         <div class="image-thumb">
                             <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=200&h=200&fit=crop" alt="Uploaded mug design" loading="lazy">
                         </div>
@@ -117,7 +636,7 @@
             <div>
                 <section aria-label="Product mockups">
                     <div class="product-grid">
-                        <article class="product-card" data-mm-product-card data-mm-id="product-1">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Mint Geo Mug - ceramic mug with geometric design" loading="lazy">
                             </div>
@@ -125,12 +644,12 @@
                                 <h3 class="product-title">Mint Geo Mug</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Geo Mug" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo Mug">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-2">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" alt="Mint Geo T-Shirt - cotton tee with geometric print" loading="lazy">
                             </div>
@@ -138,12 +657,12 @@
                                 <h3 class="product-title">Mint Geo Tshirt</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Geo T-Shirt" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo T-Shirt">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-3">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop" alt="Mint Geo Hoodie - comfortable hoodie with geometric design" loading="lazy">
                             </div>
@@ -151,12 +670,12 @@
                                 <h3 class="product-title">Mint Geo Hoodie</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Geo Hoodie" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo Hoodie">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-4">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap - adjustable cap with embroidered design" loading="lazy">
                             </div>
@@ -164,12 +683,12 @@
                                 <h3 class="product-title">Mint Baseball Cap</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Baseball Cap" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Baseball Cap">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-5">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap - adjustable cap with embroidered design" loading="lazy">
                             </div>
@@ -177,12 +696,12 @@
                                 <h3 class="product-title">Mint Baseball Cap</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Baseball Cap" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Baseball Cap">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-6">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop" alt="Mint Geo Hoodie - comfortable hoodie with geometric design" loading="lazy">
                             </div>
@@ -190,12 +709,12 @@
                                 <h3 class="product-title">Mint Geo Hoodie</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Geo Hoodie" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo Hoodie">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-7">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" alt="Mint Tote Bag - canvas tote with printed design" loading="lazy">
                             </div>
@@ -203,12 +722,12 @@
                                 <h3 class="product-title">Mint Tote Bag</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Mint Tote Bag" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Mint Tote Bag">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-8">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Phone Case - protective case with custom design" loading="lazy">
                             </div>
@@ -216,12 +735,12 @@
                                 <h3 class="product-title">Phone Case</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Phone Case" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Phone Case">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-9">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Phone Case - protective case with custom design" loading="lazy">
                             </div>
@@ -229,7 +748,7 @@
                                 <h3 class="product-title">Phone Case</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Generate Phone Case" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Generate Phone Case">Generate</button>
                                 </div>
                             </div>
                         </article>
@@ -251,7 +770,7 @@
                             <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                 <div class="progress-fill" style="width: 20%;"></div>
                             </div>
-                            <button class="btn-generate" data-mm-generate-button>Generate</button>
+                            <button class="btn-generate">Generate</button>
                         </div>
 
                         <div class="status-card">
@@ -261,11 +780,11 @@
                             <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                                 <div class="progress-fill" style="width: 60%;"></div>
                             </div>
-                            <button class="btn-generate" data-mm-generate-button>Generate</button>
+                            <button class="btn-generate">Generate</button>
                         </div>
                     </div>
 
-                    <div class="history-card" data-mm-generation-timeline>
+                    <div class="history-card">
                         <div class="history-item">
                             <svg class="history-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -297,7 +816,7 @@
 
                     <!-- Results Grid -->
                     <div class="results-grid" style="margin-top: 32px;">
-                        <article class="product-card" data-mm-product-card data-mm-id="product-10">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" alt="Generated Mint Tote Bag design" loading="lazy">
                             </div>
@@ -305,12 +824,12 @@
                                 <h3 class="product-title">Mint Tote Bag</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Regenerate Mint Tote Bag" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Regenerate Mint Tote Bag">Generate</button>
                                 </div>
                             </div>
                         </article>
 
-                        <article class="product-card" data-mm-product-card data-mm-id="product-11">
+                        <article class="product-card">
                             <div class="product-image">
                                 <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Generated Phone Case design" loading="lazy">
                             </div>
@@ -318,7 +837,7 @@
                                 <h3 class="product-title">Phone Case</h3>
                                 <div class="product-footer">
                                     <span class="product-price">$25.00</span>
-                                    <button class="btn-generate" aria-label="Regenerate Phone Case" data-mm-generate-button>Generate</button>
+                                    <button class="btn-generate" aria-label="Regenerate Phone Case">Generate</button>
                                 </div>
                             </div>
                         </article>
@@ -365,6 +884,86 @@
         </div>
     </footer>
 
-    <script src="app.js" defer></script>
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.addEventListener('change', (e) => {
+                console.log('Filter changed:', e.target.value);
+                // Filter logic would go here
+            });
+        });
+
+        // Generate button functionality
+        document.querySelectorAll('.btn-generate').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.product-card, .status-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Product';
+                console.log('Generating:', title);
+                
+                // Disable button and show loading state
+                button.textContent = 'Generating...';
+                button.disabled = true;
+                
+                // Simulate generation
+                setTimeout(() => {
+                    button.textContent = 'Generate';
+                    button.disabled = false;
+                    alert(`${title} generated successfully!`);
+                }, 2000);
+            });
+        });
+
+        // Image thumbnail selection
+        document.querySelectorAll('.image-thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumb.style.outline = '3px solid #9DD9C8';
+                setTimeout(() => {
+                    thumb.style.outline = '';
+                }, 1000);
+            });
+        });
+
+        // Theme input change handler
+        const themeInput = document.querySelector('.theme-input');
+        if (themeInput) {
+            themeInput.addEventListener('input', (e) => {
+                console.log('Theme updated:', e.target.value);
+            });
+        }
+
+        // Simulate progress bar updates
+        function updateProgress() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const currentWidth = parseInt(bar.style.width) || 0;
+                if (currentWidth < 100) {
+                    const newWidth = Math.min(currentWidth + Math.random() * 10, 100);
+                    bar.style.width = newWidth + '%';
+                    bar.closest('.progress-bar').setAttribute('aria-valuenow', newWidth);
+                }
+            });
+        }
+
+        // Update progress every 3 seconds
+        setInterval(updateProgress, 3000);
+
+        // Keyboard navigation for product cards
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.querySelector('.btn-generate')?.click();
+                }
+            });
+        });
+
+        // Responsive navigation toggle (for mobile)
+        const navLinks = document.querySelector('.nav-links');
+        if (window.innerWidth <= 768) {
+            console.log('Mobile navigation - consider adding hamburger menu');
+        }
+    </script>
 </body>
 </html>
+```
