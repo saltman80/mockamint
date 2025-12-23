@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,609 @@
     <meta name="description" content="Mint Geo Shirt - Premium geometric design apparel from MockaMint Studio">
     <title>Mint Geo Shirt | MockaMint Studio</title>
     <link rel="canonical" href="https://mockamintstudio.com/products/mint-geo-shirt">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #E8E3DB;
+            color: #2B2B2B;
+            line-height: 1.5;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 12px;
+            background-color: #9DD9C8;
+            color: #2B2B2B;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .skip-link:focus {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #2B2B2B;
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-brand svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #9DD9C8;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-login {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 16px;
+            transition: color 0.2s;
+        }
+
+        .btn-login:hover {
+            color: #9DD9C8;
+        }
+
+        .btn-primary {
+            background-color: #9DD9C8;
+            color: #2B2B2B;
+            padding: 12px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .breadcrumb a {
+            color: #666666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: #2B2B2B;
+        }
+
+        .breadcrumb span {
+            color: #2B2B2B;
+            font-weight: 500;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Product Layout */
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+
+        /* Product Images */
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .product-image-main {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .product-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .product-image-item {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        .product-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+
+        .product-image-label {
+            text-align: center;
+            font-size: 14px;
+            color: #2B2B2B;
+            font-weight: 500;
+        }
+
+        /* Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .product-header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2B2B2B;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .product-price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        /* Size Selector */
+        .size-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .size-selector label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2B2B2B;
+        }
+
+        .size-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #CCCAC3;
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            color: #2B2B2B;
+            font-size: 15px;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%232B2B2B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .size-select option {
+            padding: 12px;
+        }
+
+        /* Add to Bundle Button */
+        .btn-add-bundle {
+            background-color: #9DD9C8;
+            color: #2B2B2B;
+            padding: 16px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            width: 100%;
+        }
+
+        .btn-add-bundle:hover {
+            opacity: 0.9;
+        }
+
+        /* Color Selector */
+        .color-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .color-selector label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2B2B2B;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .color-option {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border-color: #2B2B2B;
+        }
+
+        .color-mint {
+            background-color: #9DD9C8;
+        }
+
+        .color-white {
+            background-color: #FFFFFF;
+            border: 1px solid #CCCAC3;
+        }
+
+        .color-black {
+            background-color: #2B2B2B;
+        }
+
+        /* Design Variants */
+        .design-variants {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .design-variants label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2B2B2B;
+        }
+
+        .variant-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .variant-option {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+            background-color: #F8F8F8;
+        }
+
+        .variant-option:hover {
+            transform: scale(1.05);
+        }
+
+        .variant-option.selected {
+            border-color: #9DD9C8;
+        }
+
+        .variant-option img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Recommended Products */
+        .recommended-section {
+            margin-top: 64px;
+        }
+
+        .recommended-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .recommended-header h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 12px;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            border: 1px solid #CCCAC3;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #9DD9C8;
+        }
+
+        .carousel-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .product-carousel {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            background-color: #F0EDE7;
+        }
+
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .product-card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        .product-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-card-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        .btn-generate {
+            background-color: #9DD9C8;
+            color: #2B2B2B;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-generate:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2B2B2B;
+            color: #FFFFFF;
+            padding: 32px 40px;
+            margin-top: 64px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #9DD9C8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            color: #FFFFFF;
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover {
+            color: #9DD9C8;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 24px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid #444444;
+            text-align: right;
+            font-size: 13px;
+            color: #999999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .product-carousel {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .breadcrumb {
+                padding: 20px 20px 0;
+            }
+
+            .product-header h1 {
+                font-size: 32px;
+            }
+
+            .product-price {
+                font-size: 24px;
+            }
+
+            .product-image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .variant-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-carousel {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <nav role="navigation" aria-label="Main navigation" data-mm-nav>
-        <a href="index.html" class="nav-brand" aria-label="MockaMint Studio Home" data-mm-nav-link data-mm-route="index">
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="MockaMint Studio Home">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M8 4L4 6V26L8 28V4Z" fill="#9DD9C8"/>
                 <path d="M24 4L28 6V26L24 28V4Z" fill="#9DD9C8"/>
@@ -21,20 +618,20 @@
             <span>MockaMint Studio</span>
         </a>
         <ul class="nav-links">
-            <li><a href="index.html" data-mm-nav-link data-mm-route="theme">Features</a></li>
-            <li><a href="#pricing" data-mm-nav-link data-mm-route="product">Pricing</a></li>
-            <li><a href="#about" data-mm-nav-link data-mm-route="export">About</a></li>
+            <li><a href="index.html">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
         <div class="nav-actions">
             <a href="#login" class="btn-login">Login</a>
-            <a href="generator.html" class="btn-primary" data-mm-nav-link data-mm-route="generator">Product Generator</a>
+            <a href="website_generator.html" class="btn-primary">Product Generator</a>
         </div>
     </nav>
 
-    <nav class="breadcrumb" aria-label="Breadcrumb" data-mm-breadcrumb>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span aria-hidden="true">?</span>
-        <a href="generator.html">Products</a>
+        <a href="website_generator.html">Products</a>
         <span aria-hidden="true">?</span>
         <span aria-current="page">Mint Geo Shirt</span>
     </nav>
@@ -42,18 +639,18 @@
     <main id="main-content" role="main">
         <div class="container">
             <!-- Product Layout -->
-            <div class="product-layout" data-mm-id="mint-geo-shirt">
+            <div class="product-layout">
                 <!-- Product Images -->
                 <section class="product-images" aria-label="Product images">
-                    <div class="product-image-main" data-mm-product-image>
+                    <div class="product-image-main">
                         <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=800&fit=crop" alt="Mint Geo Shirt - Main view showing geometric mint green design on beige t-shirt" loading="eager">
                     </div>
                     <div class="product-image-grid">
-                        <div class="product-image-item" data-mm-product-image>
+                        <div class="product-image-item">
                             <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" alt="Mint Geo Shirt - Front view" loading="lazy">
                             <div class="product-image-label">Front View</div>
                         </div>
-                        <div class="product-image-item" data-mm-product-image>
+                        <div class="product-image-item">
                             <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400&h=400&fit=crop" alt="Mint Geo Shirt - Back view" loading="lazy">
                             <div class="product-image-label">Back View</div>
                         </div>
@@ -70,7 +667,7 @@
                     <!-- Size Selector -->
                     <div class="size-selector">
                         <label for="size-select">Size</label>
-                        <select id="size-select" class="size-select" aria-label="Select size" data-mm-size-selector>
+                        <select id="size-select" class="size-select" aria-label="Select size">
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>
@@ -79,15 +676,15 @@
                     </div>
 
                     <!-- Add to Bundle Button -->
-                    <button class="btn-add-bundle" aria-label="Add Mint Geo Shirt to bundle" data-mm-add-to-bundle>Add to Bundle</button>
+                    <button class="btn-add-bundle" aria-label="Add Mint Geo Shirt to bundle">Add to Bundle</button>
 
                     <!-- Color Selector -->
                     <div class="color-selector">
                         <label>Colors</label>
                         <div class="color-options" role="group" aria-label="Color selection">
-                            <button class="color-option color-mint selected" aria-label="Mint green color" data-color="mint" data-mm-variant-swatch></button>
-                            <button class="color-option color-white" aria-label="White color" data-color="white" data-mm-variant-swatch></button>
-                            <button class="color-option color-black" aria-label="Black color" data-color="black" data-mm-variant-swatch></button>
+                            <button class="color-option color-mint selected" aria-label="Mint green color" data-color="mint"></button>
+                            <button class="color-option color-white" aria-label="White color" data-color="white"></button>
+                            <button class="color-option color-black" aria-label="Black color" data-color="black"></button>
                         </div>
                     </div>
 
@@ -95,19 +692,19 @@
                     <div class="design-variants">
                         <label>Design Variants</label>
                         <div class="variant-grid" role="group" aria-label="Design variant selection">
-                            <button class="variant-option selected" aria-label="Mint t-shirt design variant" data-variant="1" data-mm-variant-swatch>
+                            <button class="variant-option selected" aria-label="Mint t-shirt design variant" data-variant="1">
                                 <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop" alt="Mint t-shirt variant" loading="lazy">
                             </button>
-                            <button class="variant-option" aria-label="White t-shirt design variant" data-variant="2" data-mm-variant-swatch>
+                            <button class="variant-option" aria-label="White t-shirt design variant" data-variant="2">
                                 <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=200&h=200&fit=crop" alt="White t-shirt variant" loading="lazy">
                             </button>
-                            <button class="variant-option" aria-label="Black t-shirt design variant" data-variant="3" data-mm-variant-swatch>
+                            <button class="variant-option" aria-label="Black t-shirt design variant" data-variant="3">
                                 <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=200&h=200&fit=crop" alt="Black t-shirt variant" loading="lazy">
                             </button>
-                            <button class="variant-option" aria-label="Gray t-shirt design variant" data-variant="4" data-mm-variant-swatch>
+                            <button class="variant-option" aria-label="Gray t-shirt design variant" data-variant="4">
                                 <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&h=200&fit=crop" alt="Gray t-shirt variant" loading="lazy">
                             </button>
-                            <button class="variant-option" aria-label="Hoodie design variant" data-variant="5" data-mm-variant-swatch>
+                            <button class="variant-option" aria-label="Hoodie design variant" data-variant="5">
                                 <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=200&h=200&fit=crop" alt="Hoodie variant" loading="lazy">
                             </button>
                         </div>
@@ -229,8 +826,104 @@
         </div>
     </footer>
 
-    <div data-mm-toasts aria-live="polite" hidden></div>
+    <script>
+        // Active navigation highlighting
+        (function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (currentPath === linkPath || (currentPath.endsWith('.html') && linkPath.endsWith(currentPath))) {
+                    link.classList.add('active');
+                }
+            });
+        })();
 
-    <script src="app.js" defer></script>
+        // Color selection
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                colorOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                console.log('Color selected:', this.dataset.color);
+            });
+        });
+
+        // Design variant selection
+        const variantOptions = document.querySelectorAll('.variant-option');
+        variantOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                variantOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                console.log('Variant selected:', this.dataset.variant);
+            });
+        });
+
+        // Size selection
+        const sizeSelect = document.getElementById('size-select');
+        sizeSelect.addEventListener('change', function() {
+            console.log('Size selected:', this.value);
+        });
+
+        // Add to Bundle button
+        const addBundleBtn = document.querySelector('.btn-add-bundle');
+        addBundleBtn.addEventListener('click', function() {
+            const size = document.getElementById('size-select').value;
+            const color = document.querySelector('.color-option.selected')?.dataset.color || 'mint';
+            const variant = document.querySelector('.variant-option.selected')?.dataset.variant || '1';
+            
+            console.log('Added to bundle:', { size, color, variant });
+            
+            this.textContent = 'Added to Bundle ?';
+            this.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                this.textContent = 'Add to Bundle';
+                this.style.opacity = '1';
+            }, 2000);
+        });
+
+        // Generate buttons in recommended products
+        document.querySelectorAll('.btn-generate').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.product-card');
+                const productTitle = card.querySelector('.product-card-title')?.textContent || 'Product';
+                
+                console.log('Generating:', productTitle);
+                
+                this.textContent = 'Generating...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.textContent = 'Generate';
+                    this.disabled = false;
+                }, 2000);
+            });
+        });
+
+        // Carousel navigation
+        const carouselPrev = document.getElementById('carousel-prev');
+        const carouselNext = document.getElementById('carousel-next');
+        const carousel = document.querySelector('.product-carousel');
+
+        carouselPrev.addEventListener('click', function() {
+            carousel.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+
+        carouselNext.addEventListener('click', function() {
+            carousel.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+
+        // Image preview modal behavior (placeholder for future implementation)
+        document.querySelectorAll('.product-image-main img, .product-image-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                console.log('Image clicked:', this.alt);
+                // Modal behavior would be implemented here
+            });
+        });
+    </script>
 </body>
 </html>
+```
