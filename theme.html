@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Theme and Input page for MockaMint Studio - Design your website with AI-powered tools">
+    <title>Theme and Input | MockaMint Studio</title>
+    <link rel="canonical" href="https://mockamintstudio.com/theme">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <nav role="navigation" aria-label="Main navigation" data-mm-nav>
+        <a href="index.html" class="nav-brand" aria-label="MockaMint Studio Home">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 4L4 6V26L8 28V4Z" fill="#9DD9C8"/>
+                <path d="M24 4L28 6V26L24 28V4Z" fill="#9DD9C8"/>
+                <path d="M16 8L12 10V22L16 24L20 22V10L16 8Z" fill="#9DD9C8"/>
+            </svg>
+            <span>MockaMint Studio</span>
+        </a>
+        <div class="nav-links">
+            <a href="./index.html" data-mm-nav-link data-mm-route="index">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Features
+            </a>
+            <a href="./theme.html" data-mm-nav-link data-mm-route="theme">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Theme
+            </a>
+            <a href="./generator.html" data-mm-nav-link data-mm-route="generator">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Generator
+            </a>
+            <a href="./product.html" data-mm-nav-link data-mm-route="product">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Product
+            </a>
+            <a href="./export.html" data-mm-nav-link data-mm-route="export">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <polyline points="8 9 12 5 16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Export
+            </a>
+        </div>
+        <div class="nav-actions">
+            <a href="#login" class="btn-login">Login</a>
+        </div>
+    </nav>
+
+    <main id="main-content" role="main">
+        <div class="container">
+            <h1 class="page-title">Theme and Input</h1>
+
+            <section class="theme-input-section" aria-labelledby="theme-input-heading">
+                <h2 id="theme-input-heading" class="visually-hidden">Theme Selection</h2>
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="theme-input"
+                        class="theme-input"
+                        data-mm-theme-text
+                        placeholder="Mint minimal geometry" 
+                        aria-label="Enter your website theme"
+                        value="Mint minimal geometry"
+                    >
+                </div>
+                <div class="tag-selection" role="group" aria-label="Theme tag selection">
+                    <button class="tag-btn selected" data-tag="minimalist" data-mm-tag-chip aria-pressed="true">Minimalist</button>
+                    <button class="tag-btn selected" data-tag="geometric" data-mm-tag-chip aria-pressed="true">Geometric</button>
+                    <button class="tag-btn selected" data-tag="modern" data-mm-tag-chip aria-pressed="true">Modern</button>
+                    <button class="tag-btn selected" data-tag="young-adults" data-mm-tag-chip aria-pressed="true">Young Adults</button>
+                </div>
+            </section>
+
+            <section class="upload-options" aria-labelledby="upload-heading">
+                <h2 id="upload-heading" class="visually-hidden">Upload Options</h2>
+                
+                <article class="upload-card" role="button" tabindex="0" aria-label="Drag and drop files" data-mm-upload-tile>
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="upload-card-title">Drag and Drop Files</h3>
+                </article>
+
+                <article class="upload-card" role="button" tabindex="0" aria-label="Choose files from device" data-mm-upload-tile>
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="13 2 13 9 20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="upload-card-title">Choose Files</h3>
+                </article>
+
+                <article class="upload-card" role="button" tabindex="0" aria-label="Import from URL" data-mm-upload-tile>
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="upload-card-title">Import from URL</h3>
+                </article>
+            </section>
+
+            <aside class="summary-card" aria-labelledby="summary-heading" data-mm-theme-sidebar>
+                <h2 id="summary-heading" class="summary-title">Summary</h2>
+                <div class="summary-row">
+                    <span class="summary-label">Progress:</span>
+                    <span class="summary-value">20%</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Estimated Time:</span>
+                    <span class="summary-value">2 mins</span>
+                </div>
+            </aside>
+
+            <section class="prompt-tips" aria-labelledby="tips-heading">
+                <div class="prompt-tips-content">
+                    <div>
+                        <h2 id="tips-heading" class="prompt-tips-header">Prompt Tips</h2>
+                        <ul class="tips-list">
+                            <li>Uploads all thumbnails norramiers</li>
+                            <li>Palette: soft black, warm gray, and mint</li>
+                            <li>Use other examplen: friendly modern sans serif</li>
+                        </ul>
+                    </div>
+                    <div class="example-grid" role="group" aria-label="Example designs">
+                        <button class="example-item" aria-label="Example design 1">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="example-item" aria-label="Example design 2">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="example-item" aria-label="Example design 3">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="example-item" aria-label="Example design 4">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="example-item" aria-label="Example design 5">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="example-item" aria-label="Example design 6">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#contact">Contact</a>
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy</a>
+            </nav>
+            <div class="footer-social" role="group" aria-label="Social media links">
+                <a href="#facebook" aria-label="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    </svg>
+                </a>
+                <a href="#twitter" aria-label="Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    </svg>
+                </a>
+                <a href="#instagram" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4" stroke-width="2"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="#youtube" aria-label="YouTube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#E8E3DB"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-copyright">
+                ? 2024 MockaMint Studio
+            </div>
+        </div>
+    </footer>
+
+    <div data-mm-toasts aria-live="polite" role="status"></div>
+
+    <script src="./app.js" defer></script>
+</body>
+</html>
