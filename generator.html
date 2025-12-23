@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SiteSketch AI Website Generator - Create stunning websites with AI-powered design tools">
+    <title>Website Generator | SiteSketch AI</title>
+    <link rel="canonical" href="/website_generator.html">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" style="position: absolute; left: -9999px; z-index: 999;">Skip to main content</a>
+
+    <div data-mm-toasts aria-live="polite" aria-atomic="true" class="mm-toasts"></div>
+
+    <!-- Navigation -->
+    <nav data-mm-nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="SiteSketch AI Home">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 4L4 10V22L16 28L28 22V10L16 4Z" fill="#9DD9C8"/>
+                    <path d="M16 4V16M16 16L4 10M16 16L28 10M16 16V28M4 22L16 28M28 22L16 28" stroke="#2B2B2B" stroke-width="2"/>
+                </svg>
+                <span>SiteSketch AI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="./index.html" data-mm-nav-link data-mm-route="index">Home</a></li>
+                <li><a href="./theme.html" data-mm-nav-link data-mm-route="theme">Brand Setup</a></li>
+                <li><a href="./product.html" data-mm-nav-link data-mm-route="product">Brand Assets</a></li>
+                <li><a href="./generator.html" data-mm-nav-link data-mm-route="generator" aria-current="page">Website Generator</a></li>
+                <li><a href="./export.html" data-mm-nav-link data-mm-route="export">Update Website</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#login" class="btn-login">Login</a>
+                <a href="brand_setup.html" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-container">
+        <!-- Filter Bar -->
+        <div class="filter-bar" data-mm-filter role="search" aria-label="Product filters">
+            <select class="filter-select" aria-label="Filter by product type">
+                <option>Product Type</option>
+                <option>Mugs</option>
+                <option>T-Shirts</option>
+                <option>Hoodies</option>
+                <option>Caps</option>
+                <option>Bags</option>
+                <option>Phone Cases</option>
+            </select>
+            <select class="filter-select" aria-label="Filter by color">
+                <option>Color</option>
+                <option>Mint Green</option>
+                <option>White</option>
+                <option>Black</option>
+                <option>Gray</option>
+            </select>
+            <select class="filter-select" aria-label="Filter by style">
+                <option>Style</option>
+                <option>Minimal</option>
+                <option>Geometric</option>
+                <option>Modern</option>
+                <option>Classic</option>
+            </select>
+            <select class="filter-select" aria-label="Sort products">
+                <option>Sort By</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Newest</option>
+                <option>Popular</option>
+            </select>
+        </div>
+
+        <!-- Content Layout -->
+        <div class="content-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar" role="complementary" aria-label="Generation controls">
+                <div class="sidebar-section">
+                    <h3>Theme and Input</h3>
+                    <input type="text" class="theme-input" value="Mint minimal geometry" aria-label="Design theme input" data-mm-theme-text>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Uploaded Images</h3>
+                    <div class="image-grid" data-mm-thumbnail-list>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=200&h=200&fit=crop" alt="Uploaded mug design" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1542601098-3adb3beb2f5a?w=200&h=200&fit=crop" alt="Uploaded geometric pattern" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop" alt="Uploaded product mockup" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=200&h=200&fit=crop" alt="Uploaded apparel design" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=200&h=200&fit=crop" alt="Uploaded lifestyle shot" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&h=200&fit=crop" alt="Uploaded product detail" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=200&h=200&fit=crop" alt="Uploaded brand element" loading="lazy">
+                        </div>
+                        <div class="image-thumb">
+                            <img src="https://images.unsplash.com/photo-1611510338559-2dfb27d0b39b?w=200&h=200&fit=crop" alt="Uploaded design asset" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div>
+                <section aria-label="Product mockups">
+                    <div class="product-grid">
+                        <article class="product-card" data-mm-product-card data-mm-id="product-1">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Mint Geo Mug - ceramic mug with geometric design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Geo Mug</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo Mug" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-2">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" alt="Mint Geo T-Shirt - cotton tee with geometric print" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Geo Tshirt</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo T-Shirt" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-3">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop" alt="Mint Geo Hoodie - comfortable hoodie with geometric design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Geo Hoodie</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo Hoodie" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-4">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap - adjustable cap with embroidered design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Baseball Cap</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Baseball Cap" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-5">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap - adjustable cap with embroidered design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Baseball Cap</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Baseball Cap" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-6">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop" alt="Mint Geo Hoodie - comfortable hoodie with geometric design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Geo Hoodie</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Geo Hoodie" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-7">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" alt="Mint Tote Bag - canvas tote with printed design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Tote Bag</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Mint Tote Bag" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-8">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Phone Case - protective case with custom design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Phone Case</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Phone Case" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-9">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Phone Case - protective case with custom design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Phone Case</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Generate Phone Case" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Status Section -->
+                <section class="status-section" aria-label="Generation status">
+                    <div class="section-header">
+                        <h2>Generation Status</h2>
+                        <h2>Design History</h2>
+                    </div>
+
+                    <div class="status-grid">
+                        <div class="status-card">
+                            <div class="status-label">Generation</div>
+                            <div class="status-value">20%</div>
+                            <div class="status-progress-label">Progress</div>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-fill" style="width: 20%;"></div>
+                            </div>
+                            <button class="btn-generate" data-mm-generate-button>Generate</button>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-label">Generation</div>
+                            <div class="status-value">2 mins</div>
+                            <div class="status-progress-label">Progress</div>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <button class="btn-generate" data-mm-generate-button>Generate</button>
+                        </div>
+                    </div>
+
+                    <div class="history-card" data-mm-generation-timeline>
+                        <div class="history-item">
+                            <svg class="history-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <div class="history-text">
+                                <div class="history-title">Design History</div>
+                                <div class="history-time">1 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <svg class="history-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+                            </svg>
+                            <div class="history-text">
+                                <div class="history-title">Timeline</div>
+                                <div class="history-time">1 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <svg class="history-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div class="history-text">
+                                <div class="history-title">Design History</div>
+                                <div class="history-time">1 minutes ago</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Grid -->
+                    <div class="results-grid" style="margin-top: 32px;">
+                        <article class="product-card" data-mm-product-card data-mm-id="product-10">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" alt="Generated Mint Tote Bag design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Mint Tote Bag</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Regenerate Mint Tote Bag" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-mm-product-card data-mm-id="product-11">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Generated Phone Case design" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Phone Case</h3>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.00</span>
+                                    <button class="btn-generate" aria-label="Regenerate Phone Case" data-mm-generate-button>Generate</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#facebook" aria-label="Facebook">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="#twitter" aria-label="Twitter">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="#instagram" aria-label="Instagram">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                </a>
+                <a href="#youtube" aria-label="YouTube">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <div class="footer-note">Photorealistic product imagery</div>
+                <div class="footer-copy">? Copyright, 2022</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
