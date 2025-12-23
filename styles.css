@@ -1,3 +1,4 @@
+```css
 /**
  * styles.css - MockaMint Studio Global Stylesheet
  * 
@@ -78,18 +79,6 @@
     /* Transitions */
     --transition-base: 0.2s ease;
     --transition-smooth: 0.3s ease-in-out;
-
-    /* Canonical MM tokens (contract) */
-    --mm-color-primary: var(--color-mint);
-    --mm-color-accent: var(--color-mint);
-    --mm-color-bg: var(--color-beige);
-    --mm-color-surface: var(--color-white);
-    --mm-color-text: var(--color-charcoal);
-    --mm-color-success: var(--color-mint);
-    --mm-color-warning: #F5A623;
-    --mm-gap: var(--space-md);
-    --mm-radius: var(--radius-md);
-    --mm-container-max-width: var(--max-width-container);
 }
 
 /* ============================================
@@ -190,12 +179,6 @@ button:focus-visible {
     box-shadow: var(--shadow-lg);
 }
 
-.mm-container {
-    max-width: var(--mm-container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--mm-gap);
-}
-
 .content-wrapper {
     max-width: var(--max-width-content);
     margin: 0 auto;
@@ -216,31 +199,12 @@ button:focus-visible {
     gap: var(--space-lg);
 }
 
-.mm-grid {
-    display: grid;
-    gap: var(--mm-gap);
-}
-
 .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .grid-4 {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-/* New grid-col utilities (canonical names) */
-.grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--mm-gap);
-}
-.grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--mm-gap);
-}
-.grid-cols-responsive {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--mm-gap);
 }
 
 .flex {
@@ -639,7 +603,7 @@ button:focus-visible {
 
 .generation-progress-fill {
     height: 100%;
-    background-color: var(--mm-color-accent);
+    background-color: var(--color-mint);
     transition: width 0.3s ease;
 }
 
@@ -812,8 +776,8 @@ button:focus-visible {
 .filter-btn.selected,
 .tag-btn.selected,
 .tag-chip.selected {
-    background-color: var(--mm-color-accent);
-    border-color: var(--mm-color-accent);
+    background-color: var(--color-mint);
+    border-color: var(--color-mint);
     color: var(--color-charcoal);
     font-weight: var(--font-weight-bold);
 }
@@ -842,9 +806,9 @@ button:focus-visible {
 }
 
 .variant-swatch.is-selected {
-    border-color: var(--mm-color-accent);
+    border-color: var(--color-mint);
     border-width: 3px;
-    box-shadow: 0 0 0 2px var(--mm-color-accent);
+    box-shadow: 0 0 0 2px var(--color-mint-light);
 }
 
 /* ============================================
@@ -914,7 +878,7 @@ button:focus-visible {
 
 .export-progress-fill {
     height: 100%;
-    background-color: var(--mm-color-accent);
+    background-color: var(--color-mint);
     transition: width 0.3s ease;
 }
 
@@ -1000,7 +964,6 @@ button:focus-visible {
 
 .timeline-entry {
     display: flex;
-    flex-direction: column;
     gap: var(--space-md);
     padding: var(--space-md);
     background-color: var(--color-off-white);
@@ -1302,20 +1265,6 @@ button:focus-visible {
 .hidden { display: none; }
 .visible { display: block; }
 
-/* JS/state utility classes (minimal, non-destructive) */
-.is-loading {
-    opacity: 0.6;
-    pointer-events: none;
-}
-.is-complete {
-    box-shadow: 0 0 0 4px rgba(157, 217, 200, 0.15);
-}
-.is-drag {
-    border: 2px dashed var(--mm-color-accent);
-    background-color: rgba(157, 217, 200, 0.04);
-}
-.is-hidden { display: none !important; }
-
 /* ============================================
    Print Styles
    ============================================ */
@@ -1336,3 +1285,4 @@ button:focus-visible {
         box-shadow: none;
     }
 }
+```
