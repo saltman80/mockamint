@@ -1,12 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mint Geo Shirt - Premium geometric design apparel from MockaMint Studio">
-    <title>Mint Geo Shirt | MockaMint Studio</title>
-    <link rel="canonical" href="https://mockamintstudio.com/products/mint-geo-shirt">
+    <title>Mint Geo Shirt - MockaMint Studio</title>
+    <meta name="description" content="Mint Geo Shirt - Premium print-on-demand product with geometric design. Customize and add to your bundle.">
+    <link rel="canonical" href="https://mockamint.studio/product.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,116 +17,129 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: #E8E3DB;
-            color: #2B2B2B;
-            line-height: 1.5;
+            color: #2D2D2D;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
         }
 
-        /* Skip Link */
         .skip-link {
             position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: 12px;
-            background-color: #9DD9C8;
-            color: #2B2B2B;
+            top: -40px;
+            left: 0;
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 16px;
             text-decoration: none;
-            font-weight: bold;
-        }
-
-        .skip-link:focus {
-            left: 50%;
-            transform: translateX(-50%);
-            top: 10px;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #2B2B2B;
-            padding: 16px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
+            border-radius: 4px;
             z-index: 1000;
         }
 
-        .nav-brand {
+        .skip-link:focus {
+            top: 10px;
+            left: 10px;
+        }
+
+        header {
+            background: #2D2D2D;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: #FFFFFF;
-            font-weight: bold;
-            font-size: 18px;
+            gap: 8px;
         }
 
-        .nav-brand svg {
-            width: 32px;
-            height: 32px;
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background: #9DD9C8;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #2D2D2D;
+            font-size: 16px;
         }
 
-        .nav-links {
+        .nav-menu {
             display: flex;
             align-items: center;
             gap: 32px;
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-menu a {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 15px;
+            font-weight: 500;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-menu a:hover {
             color: #9DD9C8;
         }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+        .nav-menu a[aria-current="page"] {
+            color: #9DD9C8;
         }
 
         .btn-login {
+            background: transparent;
             color: #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
             text-decoration: none;
-            font-size: 15px;
-            padding: 8px 16px;
-            transition: color 0.2s;
+            transition: background 0.2s;
+            border: 1px solid #5D5D5D;
         }
 
         .btn-login:hover {
-            color: #9DD9C8;
+            background: #3D3D3D;
         }
 
-        .btn-primary {
-            background-color: #9DD9C8;
-            color: #2B2B2B;
-            padding: 12px 24px;
-            border-radius: 24px;
+        .btn-primary-nav {
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 14px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background 0.2s;
         }
 
-        .btn-primary:hover {
-            opacity: 0.9;
+        .btn-primary-nav:hover {
+            background: #8cc9b8;
         }
 
-        /* Breadcrumb */
         .breadcrumb {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 24px 40px 0;
+            padding: 24px 32px 0;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -139,376 +154,361 @@
         }
 
         .breadcrumb a:hover {
-            color: #2B2B2B;
+            color: #2D2D2D;
         }
 
-        .breadcrumb span {
-            color: #2B2B2B;
+        .breadcrumb-separator {
+            color: #999999;
+        }
+
+        .breadcrumb-current {
+            color: #2D2D2D;
             font-weight: 500;
         }
 
-        /* Main Container */
-        .container {
-            max-width: 1400px;
+        main {
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 32px;
         }
 
-        /* Product Layout */
-        .product-layout {
+        .product-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 48px;
-            margin-bottom: 64px;
+            margin-bottom: 60px;
         }
 
-        /* Product Images */
         .product-images {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
         }
 
-        .product-image-main {
-            background-color: #FFFFFF;
+        .main-product-image {
+            background: #FFFFFF;
             border-radius: 16px;
-            overflow: hidden;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 24px;
-        }
-
-        .product-image-main img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .product-image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .product-image-item {
-            background-color: #FFFFFF;
-            border-radius: 16px;
             overflow: hidden;
-            aspect-ratio: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 24px;
         }
 
-        .product-image-item img {
+        .main-product-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            margin-bottom: 16px;
         }
 
-        .product-image-label {
-            text-align: center;
-            font-size: 14px;
-            color: #2B2B2B;
-            font-weight: 500;
-        }
-
-        /* Product Details */
         .product-details {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
-        .product-header h1 {
-            font-size: 48px;
-            font-weight: bold;
-            color: #2B2B2B;
-            margin-bottom: 16px;
-            line-height: 1.1;
+        .product-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 8px;
         }
 
         .product-price {
-            font-size: 32px;
-            font-weight: bold;
-            color: #2B2B2B;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2D2D2D;
         }
 
-        /* Size Selector */
-        .size-selector {
+        .product-section {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .size-selector label {
-            font-size: 16px;
-            font-weight: 500;
-            color: #2B2B2B;
+        .product-section-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2D2D2D;
         }
 
-        .size-select {
+        .size-selector {
+            position: relative;
+        }
+
+        .size-dropdown {
             width: 100%;
             padding: 12px 16px;
-            border: 1px solid #CCCAC3;
+            background: #FFFFFF;
+            border: 1px solid #D0D0D0;
             border-radius: 8px;
-            background-color: #FFFFFF;
-            color: #2B2B2B;
+            color: #2D2D2D;
             font-size: 15px;
+            font-family: inherit;
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%232B2B2B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%232D2D2D' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 16px center;
             padding-right: 40px;
         }
 
-        .size-select option {
-            padding: 12px;
-        }
-
-        /* Add to Bundle Button */
         .btn-add-bundle {
-            background-color: #9DD9C8;
-            color: #2B2B2B;
-            padding: 16px 24px;
-            border-radius: 8px;
-            border: none;
-            font-weight: bold;
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            font-weight: 600;
             font-size: 16px;
+            border: none;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background 0.2s;
             width: 100%;
         }
 
         .btn-add-bundle:hover {
-            opacity: 0.9;
+            background: #8cc9b8;
         }
 
-        /* Color Selector */
-        .color-selector {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .color-selector label {
-            font-size: 16px;
-            font-weight: 500;
-            color: #2B2B2B;
-        }
-
-        .color-options {
+        .color-swatches {
             display: flex;
             gap: 12px;
         }
 
-        .color-option {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #D0D0D0;
             cursor: pointer;
-            border: 3px solid transparent;
-            transition: border-color 0.2s, transform 0.2s;
+            transition: all 0.2s;
         }
 
-        .color-option:hover {
+        .color-swatch:hover {
+            border-color: #9DD9C8;
             transform: scale(1.1);
         }
 
-        .color-option.selected {
-            border-color: #2B2B2B;
+        .color-swatch.active {
+            border-color: #9DD9C8;
+            box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #9DD9C8;
         }
 
         .color-mint {
-            background-color: #9DD9C8;
+            background: #9DD9C8;
         }
 
         .color-white {
-            background-color: #FFFFFF;
-            border: 1px solid #CCCAC3;
+            background: #FFFFFF;
         }
 
         .color-black {
-            background-color: #2B2B2B;
+            background: #000000;
         }
 
-        /* Design Variants */
         .design-variants {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .design-variants label {
-            font-size: 16px;
-            font-weight: 500;
-            color: #2B2B2B;
-        }
-
-        .variant-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
         }
 
-        .variant-option {
+        .variant-thumbnail {
             aspect-ratio: 1;
             border-radius: 12px;
+            background: #F5F5F5;
+            border: 3px solid transparent;
             overflow: hidden;
             cursor: pointer;
-            border: 3px solid transparent;
-            transition: border-color 0.2s, transform 0.2s;
-            background-color: #F8F8F8;
+            transition: all 0.2s;
         }
 
-        .variant-option:hover {
-            transform: scale(1.05);
-        }
-
-        .variant-option.selected {
+        .variant-thumbnail:hover {
             border-color: #9DD9C8;
         }
 
-        .variant-option img {
+        .variant-thumbnail.active {
+            border-color: #9DD9C8;
+        }
+
+        .variant-thumbnail img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Recommended Products */
-        .recommended-section {
-            margin-top: 64px;
+        .mockup-views {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
         }
 
-        .recommended-header {
+        .mockup-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mockup-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #F5F5F5;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mockup-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .mockup-label {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D2D2D;
+        }
+
+        .recommended-section {
+            margin-top: 60px;
+        }
+
+        .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
-        .recommended-header h2 {
-            font-size: 32px;
-            font-weight: bold;
-            color: #2B2B2B;
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2D2D2D;
         }
 
         .carousel-controls {
             display: flex;
-            gap: 12px;
+            gap: 8px;
         }
 
         .carousel-btn {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #FFFFFF;
-            border: 1px solid #CCCAC3;
-            cursor: pointer;
+            background: #FFFFFF;
+            border: 1px solid #D0D0D0;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.2s;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
         .carousel-btn:hover {
-            background-color: #9DD9C8;
+            background: #9DD9C8;
+            border-color: #9DD9C8;
         }
 
-        .carousel-btn svg {
-            width: 20px;
-            height: 20px;
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
         }
 
-        .product-carousel {
+        .carousel-btn:disabled:hover {
+            background: #FFFFFF;
+            border-color: #D0D0D0;
+        }
+
+        .recommended-carousel {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+            overflow: hidden;
         }
 
-        .product-card {
-            background-color: #FFFFFF;
-            border-radius: 16px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
+        .recommended-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .product-card:hover {
+        .recommended-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         }
 
-        .product-card-image {
+        .recommended-image {
             width: 100%;
             aspect-ratio: 1;
-            border-radius: 12px;
+            background: #E8E3DB;
             overflow: hidden;
-            margin-bottom: 16px;
-            background-color: #F0EDE7;
         }
 
-        .product-card-image img {
+        .recommended-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .product-card-info {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .recommended-info {
+            padding: 16px;
         }
 
-        .product-card-title {
+        .recommended-title {
             font-size: 16px;
-            font-weight: bold;
-            color: #2B2B2B;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin-bottom: 8px;
         }
 
-        .product-card-footer {
+        .recommended-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .product-card-price {
+        .recommended-price {
             font-size: 16px;
-            font-weight: bold;
-            color: #2B2B2B;
+            font-weight: 600;
+            color: #2D2D2D;
         }
 
-        .btn-generate {
-            background-color: #9DD9C8;
-            color: #2B2B2B;
-            padding: 8px 20px;
-            border-radius: 20px;
-            border: none;
-            font-weight: bold;
+        .btn-generate-small {
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-weight: 600;
             font-size: 14px;
+            border: none;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background 0.2s;
         }
 
-        .btn-generate:hover {
-            opacity: 0.9;
+        .btn-generate-small:hover {
+            background: #8cc9b8;
         }
 
-        /* Footer */
         footer {
-            background-color: #2B2B2B;
-            color: #FFFFFF;
-            padding: 32px 40px;
-            margin-top: 64px;
+            background: #2D2D2D;
+            padding: 32px;
+            margin-top: 60px;
         }
 
         .footer-content {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -517,413 +517,332 @@
 
         .footer-links {
             display: flex;
-            gap: 24px;
+            gap: 32px;
+            list-style: none;
         }
 
         .footer-links a {
-            color: #FFFFFF;
+            color: #AAAAAA;
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: #9DD9C8;
+            color: #FFFFFF;
         }
 
-        .footer-social {
+        .footer-copyright {
+            color: #AAAAAA;
+            font-size: 14px;
+        }
+
+        .footer-meta {
+            text-align: right;
+            color: #666666;
+            font-size: 13px;
+        }
+
+        .social-links {
             display: flex;
             gap: 16px;
+            margin-bottom: 8px;
+            justify-content: flex-end;
         }
 
-        .footer-social a {
-            color: #FFFFFF;
+        .social-links a {
+            color: #AAAAAA;
             transition: color 0.2s;
         }
 
-        .footer-social a:hover {
+        .social-links a:hover {
             color: #9DD9C8;
         }
 
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 24px auto 0;
-            padding-top: 24px;
-            border-top: 1px solid #444444;
-            text-align: right;
-            font-size: 13px;
-            color: #999999;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .product-layout {
+        @media (max-width: 1200px) {
+            .product-container {
                 grid-template-columns: 1fr;
             }
 
-            .product-carousel {
-                grid-template-columns: repeat(2, 1fr);
+            .recommended-carousel {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .design-variants {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 16px 20px;
+            .nav-menu {
+                gap: 16px;
+                font-size: 14px;
             }
 
-            .nav-links {
-                display: none;
+            .btn-login,
+            .btn-primary-nav {
+                padding: 6px 16px;
+                font-size: 13px;
             }
 
-            .container {
-                padding: 20px;
-            }
-
-            .breadcrumb {
-                padding: 20px 20px 0;
-            }
-
-            .product-header h1 {
-                font-size: 32px;
+            .product-title {
+                font-size: 28px;
             }
 
             .product-price {
                 font-size: 24px;
             }
 
-            .product-image-grid {
+            .mockup-views {
                 grid-template-columns: 1fr;
             }
 
-            .variant-grid {
+            .recommended-carousel {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .product-carousel {
-                grid-template-columns: 1fr;
+            .design-variants {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+
+            .footer-meta {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
             }
         }
     </style>
 </head>
-<body>
+<body data-layout="full">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <nav role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-brand" aria-label="MockaMint Studio Home">
-            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M8 4L4 6V26L8 28V4Z" fill="#9DD9C8"/>
-                <path d="M24 4L28 6V26L24 28V4Z" fill="#9DD9C8"/>
-                <path d="M16 8L12 10V22L16 24L20 22V10L16 8Z" fill="#9DD9C8"/>
-            </svg>
-            <span>MockaMint Studio</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-        <div class="nav-actions">
-            <a href="#login" class="btn-login">Login</a>
-            <a href="website_generator.html" class="btn-primary">Product Generator</a>
-        </div>
-    </nav>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation" data-nav>
+            <a href="index.html" class="logo" data-page="index">
+                <span class="logo-icon">M</span>
+                MockaMint Studio
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-page="index">Features</a></li>
+                <li><a href="theme.html" data-page="theme">Pricing</a></li>
+                <li><a href="product.html" data-page="product" aria-current="page">About</a></li>
+                <li><a href="#" class="btn-login">Login</a></li>
+                <li><a href="generator.html" class="btn-primary-nav" data-page="generator">Product Generator</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
-        <span aria-hidden="true">?</span>
-        <a href="website_generator.html">Products</a>
-        <span aria-hidden="true">?</span>
-        <span aria-current="page">Mint Geo Shirt</span>
+        <span class="breadcrumb-separator" aria-hidden="true">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+                <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <a href="product.html">Products</a>
+        <span class="breadcrumb-separator" aria-hidden="true">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+                <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <span class="breadcrumb-current" aria-current="page">Mint Geo Shirt</span>
     </nav>
 
     <main id="main-content" role="main">
-        <div class="container">
-            <!-- Product Layout -->
-            <div class="product-layout">
-                <!-- Product Images -->
-                <section class="product-images" aria-label="Product images">
-                    <div class="product-image-main">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=800&fit=crop" alt="Mint Geo Shirt - Main view showing geometric mint green design on beige t-shirt" loading="eager">
-                    </div>
-                    <div class="product-image-grid">
-                        <div class="product-image-item">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" alt="Mint Geo Shirt - Front view" loading="lazy">
-                            <div class="product-image-label">Front View</div>
-                        </div>
-                        <div class="product-image-item">
-                            <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400&h=400&fit=crop" alt="Mint Geo Shirt - Back view" loading="lazy">
-                            <div class="product-image-label">Back View</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Product Details -->
-                <aside class="product-details" role="complementary" aria-label="Product details">
-                    <div class="product-header">
-                        <h1>Mint Geo Shirt</h1>
-                        <div class="product-price">$25.00</div>
-                    </div>
-
-                    <!-- Size Selector -->
-                    <div class="size-selector">
-                        <label for="size-select">Size</label>
-                        <select id="size-select" class="size-select" aria-label="Select size">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                    </div>
-
-                    <!-- Add to Bundle Button -->
-                    <button class="btn-add-bundle" aria-label="Add Mint Geo Shirt to bundle">Add to Bundle</button>
-
-                    <!-- Color Selector -->
-                    <div class="color-selector">
-                        <label>Colors</label>
-                        <div class="color-options" role="group" aria-label="Color selection">
-                            <button class="color-option color-mint selected" aria-label="Mint green color" data-color="mint"></button>
-                            <button class="color-option color-white" aria-label="White color" data-color="white"></button>
-                            <button class="color-option color-black" aria-label="Black color" data-color="black"></button>
-                        </div>
-                    </div>
-
-                    <!-- Design Variants -->
-                    <div class="design-variants">
-                        <label>Design Variants</label>
-                        <div class="variant-grid" role="group" aria-label="Design variant selection">
-                            <button class="variant-option selected" aria-label="Mint t-shirt design variant" data-variant="1">
-                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop" alt="Mint t-shirt variant" loading="lazy">
-                            </button>
-                            <button class="variant-option" aria-label="White t-shirt design variant" data-variant="2">
-                                <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=200&h=200&fit=crop" alt="White t-shirt variant" loading="lazy">
-                            </button>
-                            <button class="variant-option" aria-label="Black t-shirt design variant" data-variant="3">
-                                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=200&h=200&fit=crop" alt="Black t-shirt variant" loading="lazy">
-                            </button>
-                            <button class="variant-option" aria-label="Gray t-shirt design variant" data-variant="4">
-                                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&h=200&fit=crop" alt="Gray t-shirt variant" loading="lazy">
-                            </button>
-                            <button class="variant-option" aria-label="Hoodie design variant" data-variant="5">
-                                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=200&h=200&fit=crop" alt="Hoodie variant" loading="lazy">
-                            </button>
-                        </div>
-                    </div>
-                </aside>
+        <div class="product-container">
+            <div class="product-images">
+                <div class="main-product-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=800&fit=crop" alt="Mint Geo Shirt - Main product image showing geometric mint green design on beige t-shirt">
+                </div>
             </div>
 
-            <!-- Recommended Products -->
-            <section class="recommended-section" aria-labelledby="recommended-heading">
-                <div class="recommended-header">
-                    <h2 id="recommended-heading">Recommended Products</h2>
-                    <div class="carousel-controls">
-                        <button class="carousel-btn" aria-label="Previous products" id="carousel-prev">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                        <button class="carousel-btn" aria-label="Next products" id="carousel-next">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+            <div class="product-details">
+                <div>
+                    <h1 class="product-title">Mint Geo Shirt</h1>
+                    <p class="product-price">$25.00</p>
+                </div>
+
+                <div class="product-section">
+                    <label for="size-select" class="product-section-label">Size</label>
+                    <div class="size-selector">
+                        <select id="size-select" class="size-dropdown" aria-label="Select size">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="product-carousel">
-                    <article class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Mint Geo Mug with geometric pattern" loading="lazy">
-                        </div>
-                        <div class="product-card-info">
-                            <h3 class="product-card-title">Mint Geo Mug</h3>
-                            <div class="product-card-footer">
-                                <span class="product-card-price">$25.00</span>
-                                <button class="btn-generate" aria-label="Generate Mint Geo Mug">Generate</button>
-                            </div>
-                        </div>
-                    </article>
+                <button class="btn-add-bundle" aria-label="Add Mint Geo Shirt to bundle">Add to Bundle</button>
 
-                    <article class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap" loading="lazy">
-                        </div>
-                        <div class="product-card-info">
-                            <h3 class="product-card-title">Mint Baseball Cap</h3>
-                            <div class="product-card-footer">
-                                <span class="product-card-price">$25.00</span>
-                                <button class="btn-generate" aria-label="Generate Mint Baseball Cap">Generate</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap alternative" loading="lazy">
-                        </div>
-                        <div class="product-card-info">
-                            <h3 class="product-card-title">Mint Baseball Cap</h3>
-                            <div class="product-card-footer">
-                                <span class="product-card-price">$25.00</span>
-                                <button class="btn-generate" aria-label="Generate Mint Baseball Cap">Generate</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Mint Geo Mug alternative" loading="lazy">
-                        </div>
-                        <div class="product-card-info">
-                            <h3 class="product-card-title">Mint Geo Mug</h3>
-                            <div class="product-card-footer">
-                                <span class="product-card-price">$25.00</span>
-                                <button class="btn-generate" aria-label="Generate Mint Geo Mug">Generate</button>
-                            </div>
-                        </div>
-                    </article>
+                <div class="product-section">
+                    <label class="product-section-label">Colors</label>
+                    <div class="color-swatches" role="radiogroup" aria-label="Select color">
+                        <button class="color-swatch color-mint active" role="radio" aria-checked="true" aria-label="Mint green color" data-swatch="mint"></button>
+                        <button class="color-swatch color-white" role="radio" aria-checked="false" aria-label="White color" data-swatch="white"></button>
+                        <button class="color-swatch color-black" role="radio" aria-checked="false" aria-label="Black color" data-swatch="black"></button>
+                    </div>
                 </div>
-            </section>
+
+                <div class="product-section">
+                    <label class="product-section-label">Design Variants</label>
+                    <div class="design-variants" role="list" aria-label="Design variant thumbnails">
+                        <div class="variant-thumbnail active" role="listitem" tabindex="0" data-chip="variant-1">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop" alt="Mint geometric design on light shirt">
+                        </div>
+                        <div class="variant-thumbnail" role="listitem" tabindex="0" data-chip="variant-2">
+                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=200&h=200&fit=crop" alt="White shirt with minimal design">
+                        </div>
+                        <div class="variant-thumbnail" role="listitem" tabindex="0" data-chip="variant-3">
+                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&h=200&fit=crop" alt="Black shirt with mint design">
+                        </div>
+                        <div class="variant-thumbnail" role="listitem" tabindex="0" data-chip="variant-4">
+                            <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=200&h=200&fit=crop" alt="Gray shirt with geometric pattern">
+                        </div>
+                        <div class="variant-thumbnail" role="listitem" tabindex="0" data-chip="variant-5">
+                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=200&h=200&fit=crop" alt="Hoodie with mint design variant">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <section class="mockup-views" aria-labelledby="mockup-heading">
+            <h2 id="mockup-heading" class="sr-only">Product mockup views</h2>
+            <article class="mockup-card">
+                <div class="mockup-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop" alt="Front view of Mint Geo Shirt showing geometric design">
+                </div>
+                <p class="mockup-label">Front View</p>
+            </article>
+
+            <article class="mockup-card">
+                <div class="mockup-image">
+                    <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=600&h=600&fit=crop" alt="Back view of Mint Geo Shirt showing plain back design">
+                </div>
+                <p class="mockup-label">Back View</p>
+            </article>
+        </section>
+
+        <section class="recommended-section" aria-labelledby="recommended-heading">
+            <div class="section-header">
+                <h2 id="recommended-heading" class="section-title">Recommended Products</h2>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="carousel-prev" aria-label="Previous recommended products">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M8 10L4 6L8 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn" id="carousel-next" aria-label="Next recommended products">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="recommended-carousel" role="list" aria-label="Recommended products">
+                <article class="recommended-card" role="listitem" data-card="product">
+                    <div class="recommended-image">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Mint Geo Mug with geometric pattern">
+                    </div>
+                    <div class="recommended-info">
+                        <h3 class="recommended-title">Mint Geo Mug</h3>
+                        <div class="recommended-footer">
+                            <span class="recommended-price">$25.00</span>
+                            <button class="btn-generate-small" aria-label="Generate Mint Geo Mug">Generate</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recommended-card" role="listitem" data-card="product">
+                    <div class="recommended-image">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap with geometric design">
+                    </div>
+                    <div class="recommended-info">
+                        <h3 class="recommended-title">Mint Baseball Cap</h3>
+                        <div class="recommended-footer">
+                            <span class="recommended-price">$25.00</span>
+                            <button class="btn-generate-small" aria-label="Generate Mint Baseball Cap">Generate</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recommended-card" role="listitem" data-card="product">
+                    <div class="recommended-image">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop" alt="Mint Baseball Cap variant">
+                    </div>
+                    <div class="recommended-info">
+                        <h3 class="recommended-title">Mint Baseball Cap</h3>
+                        <div class="recommended-footer">
+                            <span class="recommended-price">$25.00</span>
+                            <button class="btn-generate-small" aria-label="Generate Mint Baseball Cap variant">Generate</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recommended-card" role="listitem" data-card="product">
+                    <div class="recommended-image">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Mint Geo Mug variant">
+                    </div>
+                    <div class="recommended-info">
+                        <h3 class="recommended-title">Mint Geo Mug</h3>
+                        <div class="recommended-footer">
+                            <span class="recommended-price">$25.00</span>
+                            <button class="btn-generate-small" aria-label="Generate Mint Geo Mug variant">Generate</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer role="contentinfo">
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="#contact">Contact</a>
-                <a href="#terms">Terms</a>
-                <a href="#privacy">Privacy</a>
+            <ul class="footer-links">
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+            <p class="footer-copyright">? Copyright, 2024</p>
+            <div class="footer-meta">
+                <div class="social-links">
+                    <a href="#facebook" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#twitter" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212 0.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#instagram" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#youtube" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div>Photorealistic product imagery</div>
             </div>
-            <div class="footer-social">
-                <a href="#facebook" aria-label="Facebook">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                    </svg>
-                </a>
-                <a href="#twitter" aria-label="Twitter">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-                    </svg>
-                </a>
-                <a href="#instagram" aria-label="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="#2B2B2B"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#2B2B2B" stroke-width="2"/>
-                    </svg>
-                </a>
-                <a href="#youtube" aria-label="YouTube">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
-                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#2B2B2B"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Photorealistic product imagery</p>
-            <p>? Copyright, 2022</p>
         </div>
     </footer>
 
-    <script>
-        // Active navigation highlighting
-        (function() {
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            navLinks.forEach(link => {
-                const linkPath = new URL(link.href).pathname;
-                if (currentPath === linkPath || (currentPath.endsWith('.html') && linkPath.endsWith(currentPath))) {
-                    link.classList.add('active');
-                }
-            });
-        })();
-
-        // Color selection
-        const colorOptions = document.querySelectorAll('.color-option');
-        colorOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                colorOptions.forEach(opt => opt.classList.remove('selected'));
-                this.classList.add('selected');
-                console.log('Color selected:', this.dataset.color);
-            });
-        });
-
-        // Design variant selection
-        const variantOptions = document.querySelectorAll('.variant-option');
-        variantOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                variantOptions.forEach(opt => opt.classList.remove('selected'));
-                this.classList.add('selected');
-                console.log('Variant selected:', this.dataset.variant);
-            });
-        });
-
-        // Size selection
-        const sizeSelect = document.getElementById('size-select');
-        sizeSelect.addEventListener('change', function() {
-            console.log('Size selected:', this.value);
-        });
-
-        // Add to Bundle button
-        const addBundleBtn = document.querySelector('.btn-add-bundle');
-        addBundleBtn.addEventListener('click', function() {
-            const size = document.getElementById('size-select').value;
-            const color = document.querySelector('.color-option.selected')?.dataset.color || 'mint';
-            const variant = document.querySelector('.variant-option.selected')?.dataset.variant || '1';
-            
-            console.log('Added to bundle:', { size, color, variant });
-            
-            this.textContent = 'Added to Bundle ?';
-            this.style.opacity = '0.8';
-            
-            setTimeout(() => {
-                this.textContent = 'Add to Bundle';
-                this.style.opacity = '1';
-            }, 2000);
-        });
-
-        // Generate buttons in recommended products
-        document.querySelectorAll('.btn-generate').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const card = this.closest('.product-card');
-                const productTitle = card.querySelector('.product-card-title')?.textContent || 'Product';
-                
-                console.log('Generating:', productTitle);
-                
-                this.textContent = 'Generating...';
-                this.disabled = true;
-                
-                setTimeout(() => {
-                    this.textContent = 'Generate';
-                    this.disabled = false;
-                }, 2000);
-            });
-        });
-
-        // Carousel navigation
-        const carouselPrev = document.getElementById('carousel-prev');
-        const carouselNext = document.getElementById('carousel-next');
-        const carousel = document.querySelector('.product-carousel');
-
-        carouselPrev.addEventListener('click', function() {
-            carousel.scrollBy({ left: -320, behavior: 'smooth' });
-        });
-
-        carouselNext.addEventListener('click', function() {
-            carousel.scrollBy({ left: 320, behavior: 'smooth' });
-        });
-
-        // Image preview modal behavior (placeholder for future implementation)
-        document.querySelectorAll('.product-image-main img, .product-image-item img').forEach(img => {
-            img.addEventListener('click', function() {
-                console.log('Image clicked:', this.alt);
-                // Modal behavior would be implemented here
-            });
-        });
-    </script>
+    <div data-toast-container aria-live="polite"></div>
+    <script defer src="app.js"></script>
 </body>
 </html>
-```
