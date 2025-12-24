@@ -1,523 +1,934 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SiteSketch AI - Brand Assets Management. Upload, organize, and manage your brand assets.">
-    <title>Brand Assets - SiteSketch AI</title>
-    <link rel="canonical" href="https://sitesketch.ai/brand_assets.html">
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <div class="container">
-        <header role="banner">
-            <a href="index.html" class="logo" aria-label="SiteSketch AI Home">
-                <div class="logo-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <span class="logo-text">SiteSketch AI</span>
-            </a>
-            
-            <nav role="navigation" aria-label="Main navigation">
-                <a href="index.html">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Home
-                </a>
-                <a href="brand_setup.html">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Brand Setup
-                </a>
-                <a href="brand_assets.html" aria-current="page">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                        <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Brand Assets
-                </a>
-                <a href="website_generator.html">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Generate
-                </a>
-                <a href="update_website.html">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Update
-                </a>
-                <button class="btn-login" aria-label="Login">Login</button>
-            </nav>
-        </header>
+    <title>Export & Publish - MockaMint Studio</title>
+    <meta name="description" content="Export and publish your print-on-demand products to multiple platforms.">
+    <link rel="canonical" href="https://mockamint.studio/export.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <main id="main-content" class="main-content">
-            <div class="page-header">
-                <h1>Brand Assets</h1>
-                <p>Upload, organize, and manage your brand assets.</p>
-            </div>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #2D2D2D;
+            color: #FFFFFF;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
 
-            <div class="content-layout">
-                <div class="assets-section">
-                    <div class="upload-zone" id="uploadZone" role="button" tabindex="0" aria-label="Upload assets">
-                        <div class="upload-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M17 8L12 3L7 8" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 3V15" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="upload-text">Upload Assets</div>
-                        <div class="upload-hint">Drag & drop or click to browse</div>
-                        <input type="file" id="fileInput" style="display: none;" multiple accept="image/*">
-                    </div>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+        }
 
-                    <h2>Logos</h2>
-                    <div class="assets-grid" id="logosGrid">
-                        <article class="asset-card" data-asset-id="1">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop" alt="Logo primary" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Logo Primary</span>
-                                <div class="asset-meta">PNG ? 1200?800</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
+        .skip-link:focus {
+            top: 10px;
+            left: 10px;
+        }
 
-                        <article class="asset-card" data-asset-id="2">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&h=200&fit=crop" alt="Logo secondary" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Logo Secondary</span>
-                                <div class="asset-meta">SVG ? 800?800</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
+        header {
+            background: #2D2D2D;
+            border-bottom: 1px solid #3D3D3D;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-                        <article class="asset-card" data-asset-id="3">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop" alt="Logo mark" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Logo Mark</span>
-                                <div class="asset-meta">PNG ? 512?512</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
-                    </div>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-                    <h2>Product Images</h2>
-                    <div class="assets-grid" id="imagesGrid">
-                        <article class="asset-card" data-asset-id="4">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=200&h=200&fit=crop" alt="Product hero" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Product Hero</span>
-                                <div class="asset-meta">JPG ? 1920?1080</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-                        <article class="asset-card" data-asset-id="5">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop" alt="Product detail" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Product Detail</span>
-                                <div class="asset-meta">PNG ? 1600?1200</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background: #9DD9C8;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #2D2D2D;
+            font-size: 16px;
+        }
 
-                        <article class="asset-card" data-asset-id="6">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=200&h=200&fit=crop" alt="Lifestyle shot" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Lifestyle Shot</span>
-                                <div class="asset-meta">JPG ? 2400?1600</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
 
-                        <article class="asset-card" data-asset-id="7">
-                            <div class="asset-thumbnail">
-                                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=200&h=200&fit=crop" alt="Background pattern" loading="lazy">
-                            </div>
-                            <div class="asset-info">
-                                <span class="asset-label">Background Pattern</span>
-                                <div class="asset-meta">PNG ? 3000?2000</div>
-                            </div>
-                            <div class="asset-actions">
-                                <button class="icon-btn" aria-label="Download asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Edit asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="icon-btn" aria-label="Delete asset">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+        .nav-menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-                <aside class="preview-panel" id="previewPanel" aria-label="Asset preview">
-                    <h3>Asset Preview</h3>
-                    <div class="preview-image" id="previewImage">
-                        <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=300&fit=crop" alt="Selected asset preview">
-                    </div>
-                    <div class="preview-details">
-                        <div class="detail-row">
-                            <span class="detail-label">File Name</span>
-                            <span class="detail-value" id="fileName">logo_primary.png</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Format</span>
-                            <span class="detail-value" id="fileFormat">PNG</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Dimensions</span>
-                            <span class="detail-value" id="fileDimensions">1200 ? 800</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">File Size</span>
-                            <span class="detail-value" id="fileSize">245 KB</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Uploaded</span>
-                            <span class="detail-value" id="fileDate">Dec 10, 2024</span>
-                        </div>
-                    </div>
-                    <div class="preview-actions">
-                        <button class="btn-primary" id="downloadBtn">Download Asset</button>
-                        <button class="btn-secondary" id="replaceBtn">Replace Asset</button>
-                        <button class="btn-secondary" id="deleteBtn">Delete Asset</button>
-                    </div>
-                </aside>
-            </div>
-        </main>
+        .nav-menu a:hover {
+            color: #9DD9C8;
+        }
 
-        <footer role="contentinfo">
-            <div class="footer-links">
-                <a href="#contact">Contact</a>
-                <a href="#terms">Terms</a>
-                <a href="#privacy">Privacy</a>
-            </div>
-            
-            <div class="copyright">
-                ? 2024 SiteSketch AI
-            </div>
-        </footer>
-    </div>
+        .nav-menu a.active {
+            color: #9DD9C8;
+        }
 
-    
-    <script>
-        // Asset data structure
-        const assetData = {
-            '1': {
-                name: 'logo_primary.png',
-                format: 'PNG',
-                dimensions: '1200 ? 800',
-                size: '245 KB',
-                date: 'Dec 10, 2024',
-                src: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=300&fit=crop'
-            },
-            '2': {
-                name: 'logo_secondary.svg',
-                format: 'SVG',
-                dimensions: '800 ? 800',
-                size: '18 KB',
-                date: 'Dec 9, 2024',
-                src: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop'
-            },
-            '3': {
-                name: 'logo_mark.png',
-                format: 'PNG',
-                dimensions: '512 ? 512',
-                size: '89 KB',
-                date: 'Dec 8, 2024',
-                src: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop'
-            },
-            '4': {
-                name: 'product_hero.jpg',
-                format: 'JPG',
-                dimensions: '1920 ? 1080',
-                size: '876 KB',
-                date: 'Dec 7, 2024',
-                src: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=300&fit=crop'
-            },
-            '5': {
-                name: 'product_detail.png',
-                format: 'PNG',
-                dimensions: '1600 ? 1200',
-                size: '542 KB',
-                date: 'Dec 6, 2024',
-                src: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=300&fit=crop'
-            },
-            '6': {
-                name: 'lifestyle_shot.jpg',
-                format: 'JPG',
-                dimensions: '2400 ? 1600',
-                size: '1.2 MB',
-                date: 'Dec 5, 2024',
-                src: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop'
-            },
-            '7': {
-                name: 'background_pattern.png',
-                format: 'PNG',
-                dimensions: '3000 ? 2000',
-                size: '934 KB',
-                date: 'Dec 4, 2024',
-                src: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=300&fit=crop'
+        .btn-login {
+            background: transparent;
+            color: #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.2s;
+            border: 1px solid #5D5D5D;
+        }
+
+        .btn-login:hover {
+            background: #3D3D3D;
+        }
+
+        .btn-primary-nav {
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #8cc9b8;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 32px 80px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        .export-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .bundle-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-card {
+            background: #474747;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .product-image {
+            width: 72px;
+            height: 72px;
+            border-radius: 8px;
+            background: #E8E3DB;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+        }
+
+        .product-info .price {
+            font-size: 15px;
+            color: #AAAAAA;
+            font-weight: 500;
+        }
+
+        .export-panel {
+            background: #5D5D5D;
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .panel-section {
+            margin-bottom: 32px;
+        }
+
+        .panel-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .panel-section h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid #7D7D7D;
+            background: transparent;
+            cursor: pointer;
+            appearance: none;
+            position: relative;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked {
+            background: #9DD9C8;
+            border-color: #9DD9C8;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid #2D2D2D;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .checkbox-item label {
+            font-size: 15px;
+            color: #FFFFFF;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .two-column-checkboxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+
+        .store-tiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .store-tile {
+            background: #E8E3DB;
+            border-radius: 12px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .store-tile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .store-icon {
+            width: 48px;
+            height: 48px;
+            color: #666666;
+        }
+
+        .store-tile span {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D2D2D;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            background: #474747;
+            border: 1px solid #6D6D6D;
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-family: inherit;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .toggle-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .toggle-group label {
+            font-size: 15px;
+            color: #FFFFFF;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 26px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #474747;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #9DD9C8;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(22px);
+        }
+
+        .datetime-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #474747;
+            border: 1px solid #6D6D6D;
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        .form-input::placeholder {
+            color: #999999;
+        }
+
+        .btn-export {
+            width: 100%;
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 24px;
+        }
+
+        .btn-export:hover {
+            background: #8cc9b8;
+        }
+
+        .bottom-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .section-card {
+            background: #5D5D5D;
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .section-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+        }
+
+        .asset-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .asset-item {
+            background: #474747;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #5D5D5D;
+        }
+
+        .asset-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+        }
+
+        .asset-info p {
+            font-size: 14px;
+            color: #AAAAAA;
+        }
+
+        .asset-download {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #9DD9C8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .asset-download:hover {
+            color: #8cc9b8;
+        }
+
+        .confirmation-panel {
+            background: #E8E3DB;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .confirmation-panel h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin-bottom: 12px;
+        }
+
+        .confirmation-panel p {
+            font-size: 15px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #2D2D2D;
+            border-top: 1px solid #3D3D3D;
+            padding: 32px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #AAAAAA;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-copyright {
+            color: #AAAAAA;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1200px) {
+            .export-layout {
+                grid-template-columns: 1fr;
             }
-        };
 
-        let currentAssetId = '1';
+            .store-tiles {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-        // Asset card selection
-        const assetCards = document.querySelectorAll('.asset-card');
-        assetCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                // Don't trigger if clicking on action buttons
-                if (e.target.closest('.icon-btn')) return;
-                
-                assetCards.forEach(c => c.classList.remove('selected'));
-                card.classList.add('selected');
-                
-                const assetId = card.getAttribute('data-asset-id');
-                currentAssetId = assetId;
-                updatePreview(assetId);
-            });
+            .bottom-sections {
+                grid-template-columns: 1fr;
+            }
+        }
 
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    card.click();
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .nav-menu {
+                gap: 16px;
+            }
+
+            .store-tiles {
+                grid-template-columns: 1fr;
+            }
+
+            .two-column-checkboxes {
+                grid-template-columns: 1fr;
+            }
+
+            .datetime-group {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body data-layout="full">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div data-toast-container aria-live="polite"></div>
+    
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation" data-nav>
+            <a href="index.html" class="logo" data-page="index.html">
+                <span class="logo-icon">M</span>
+                MockaMint Studio
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-page="index.html">Home</a></li>
+                <li><a href="theme.html" data-page="theme.html">Features</a></li>
+                <li><a href="generator.html" data-page="generator.html">Pricing</a></li>
+                <li><a href="product.html" data-page="product.html">About</a></li>
+                <li><a href="#" class="btn-login">Login</a></li>
+                <li><a href="generator.html" class="btn-primary-nav" data-page="generator.html">Product Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <h1>Export and Publish</h1>
+
+        <div class="export-layout">
+            <aside class="bundle-summary" aria-label="Bundle summary">
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="72" height="72" fill="#9DD9C8"/>
+                            <path d="M20 25C20 25 25 20 36 20C47 20 52 25 52 25V47C52 47 47 42 36 42C25 42 20 47 20 47V25Z" fill="#E8E3DB"/>
+                            <circle cx="30" cy="32" r="3" fill="#2D2D2D"/>
+                            <circle cx="42" cy="32" r="3" fill="#2D2D2D"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mint Geo Shirt</h3>
+                        <p class="price">$7.99</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="72" height="72" fill="#9DD9C8"/>
+                            <ellipse cx="36" cy="45" rx="14" ry="6" fill="#E8E3DB"/>
+                            <rect x="24" y="25" width="24" height="20" rx="2" fill="#E8E3DB"/>
+                            <path d="M28 25C28 25 28 22 36 22C44 22 44 25 44 25" stroke="#2D2D2D" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mint Geo Mug</h3>
+                        <p class="price">$3.99</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="72" height="72" fill="#9DD9C8"/>
+                            <path d="M26 20C26 20 28 18 36 18C44 18 46 20 46 20L48 26H24L26 20Z" fill="#E8E3DB"/>
+                            <path d="M24 26H48V48C48 50 46 52 44 52H28C26 52 24 50 24 48V26Z" fill="#E8E3DB"/>
+                            <circle cx="36" cy="38" r="4" fill="#2D2D2D"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mint Baseball Cap</h3>
+                        <p class="price">$4.99</p>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="export-panel">
+                <div class="panel-section">
+                    <div class="two-column-checkboxes">
+                        <div>
+                            <h2>File Formats</h2>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="format-png" checked>
+                                    <label for="format-png">PNG</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="format-jpg" checked>
+                                    <label for="format-jpg">JPG</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="format-pdf">
+                                    <label for="format-pdf">PDF</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Packaging Checklist</h2>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pack-tags" checked>
+                                    <label for="pack-tags">Hang Tags</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pack-bags" checked>
+                                    <label for="pack-bags">Poly Bags</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pack-box">
+                                    <label for="pack-box">Custom Box</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Branded neutral tiles</h2>
+                    <div class="store-tiles">
+                        <div class="store-tile" role="button" tabindex="0">
+                            <svg class="store-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 8L8 18V38C8 39.1 8.9 40 10 40H38C39.1 40 40 39.1 40 38V18L36 8H12Z" fill="currentColor"/>
+                                <path d="M8 18H40" stroke="#E8E3DB" stroke-width="2"/>
+                                <path d="M30 26C30 29.3 27.3 32 24 32C20.7 32 18 29.3 18 26" stroke="#E8E3DB" stroke-width="2"/>
+                            </svg>
+                            <span>Shopify</span>
+                        </div>
+                        <div class="store-tile" role="button" tabindex="0">
+                            <svg class="store-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 8L8 16V32L24 40L40 32V16L24 8Z" fill="currentColor"/>
+                                <text x="24" y="30" font-size="20" font-weight="700" fill="#E8E3DB" text-anchor="middle" font-family="serif">E</text>
+                            </svg>
+                            <span>Etsy</span>
+                        </div>
+                        <div class="store-tile" role="button" tabindex="0">
+                            <svg class="store-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="14" width="32" height="20" rx="4" fill="currentColor"/>
+                                <text x="24" y="30" font-size="14" font-weight="700" fill="#E8E3DB" text-anchor="middle">woo</text>
+                            </svg>
+                            <span>WooCommerce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <div class="form-group">
+                        <label for="destination">Publish Destination</label>
+                        <select id="destination" class="form-select">
+                            <option>Select Destination</option>
+                            <option>Shopify Store</option>
+                            <option>Etsy Shop</option>
+                            <option>WooCommerce</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <div class="toggle-group">
+                        <label for="schedule-toggle">Schedule Publish</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="schedule-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <label style="display: block; font-size: 15px; color: #FFFFFF; margin-bottom: 8px; font-weight: 500;">Date and / time</label>
+                    <div class="datetime-group">
+                        <input type="text" class="form-input" value="9/10/2021" placeholder="Date">
+                        <input type="text" class="form-input" value="10:00 PM" placeholder="Time">
+                    </div>
+                </div>
+
+                <button class="btn-export">Export Bundle</button>
+            </div>
+        </div>
+
+        <div class="bottom-sections">
+            <section class="section-card" aria-labelledby="assets-heading">
+                <h2 id="assets-heading">Downloadable Assets</h2>
+                <div class="asset-list">
+                    <div class="asset-item" data-export-item>
+                        <div class="asset-info">
+                            <h3>Product Images</h3>
+                            <p>Download shirt products</p>
+                        </div>
+                        <button class="asset-download" aria-label="Download product images">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="asset-item" data-export-item>
+                        <div class="asset-info">
+                            <h3>Mockups</h3>
+                            <p>Download all Mockups</p>
+                        </div>
+                        <button class="asset-download" aria-label="Download mockups">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="asset-item" data-export-item>
+                        <div class="asset-info">
+                            <h3>Tech Pack</h3>
+                            <p>Download your Tech Pack</p>
+                        </div>
+                        <button class="asset-download" aria-label="Download tech pack">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card" aria-labelledby="confirmation-heading">
+                <h2 id="confirmation-heading">Confirmation Panel</h2>
+                <div class="confirmation-panel">
+                    <h3>Exporting:</h3>
+                    <p>Shirt, Mug, Cap to Shopify on [Date]</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+            <p class="footer-copyright">? 2024 MockaMint Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        // Active navigation highlighting
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a[data-page]');
+            
+            if (currentPage === 'export.html') {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.classList.remove('active');
+                        link.removeAttribute('aria-current');
+                    }
+                });
+            }
+        })();
+
+        // Schedule toggle functionality
+        (function() {
+            const scheduleToggle = document.getElementById('schedule-toggle');
+            const datetimeGroup = document.querySelector('.datetime-group');
+            
+            scheduleToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    datetimeGroup.style.opacity = '1';
+                    datetimeGroup.querySelectorAll('input').forEach(input => {
+                        input.disabled = false;
+                    });
+                } else {
+                    datetimeGroup.style.opacity = '0.5';
+                    datetimeGroup.querySelectorAll('input').forEach(input => {
+                        input.disabled = true;
+                    });
                 }
             });
-        });
+        })();
 
-        // Update preview panel
-        function updatePreview(assetId) {
-            const asset = assetData[assetId];
-            if (!asset) return;
-
-            document.getElementById('previewImage').innerHTML = `<img src="${asset.src}" alt="${asset.name}">`;
-            document.getElementById('fileName').textContent = asset.name;
-            document.getElementById('fileFormat').textContent = asset.format;
-            document.getElementById('fileDimensions').textContent = asset.dimensions;
-            document.getElementById('fileSize').textContent = asset.size;
-            document.getElementById('fileDate').textContent = asset.date;
-        }
-
-        // Upload zone functionality
-        const uploadZone = document.getElementById('uploadZone');
-        const fileInput = document.getElementById('fileInput');
-
-        uploadZone.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        uploadZone.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                fileInput.click();
-            }
-        });
-
-        uploadZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadZone.style.borderColor = '#9DD9C8';
-            uploadZone.style.background = '#F8FCFB';
-        });
-
-        uploadZone.addEventListener('dragleave', () => {
-            uploadZone.style.borderColor = '#E0E0E0';
-            uploadZone.style.background = 'transparent';
-        });
-
-        uploadZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadZone.style.borderColor = '#E0E0E0';
-            uploadZone.style.background = 'transparent';
+        // Store tile interactions
+        (function() {
+            const storeTiles = document.querySelectorAll('.store-tile');
             
-            const files = e.dataTransfer.files;
-            handleFiles(files);
-        });
+            storeTiles.forEach(tile => {
+                tile.addEventListener('click', function() {
+                    storeTiles.forEach(t => t.style.opacity = '0.6');
+                    this.style.opacity = '1';
+                });
 
-        fileInput.addEventListener('change', (e) => {
-            const files = e.target.files;
-            handleFiles(files);
-        });
-
-        function handleFiles(files) {
-            console.log('Files uploaded:', files.length);
-            // Here you would handle the file upload
-            // For now, just log it
-            Array.from(files).forEach(file => {
-                console.log('File:', file.name, file.type, file.size);
+                tile.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
             });
-        }
+        })();
 
-        // Preview panel actions
-        document.getElementById('downloadBtn').addEventListener('click', () => {
-            const asset = assetData[currentAssetId];
-            console.log('Downloading:', asset.name);
-            // Implement download functionality
-        });
-
-        document.getElementById('replaceBtn').addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        document.getElementById('deleteBtn').addEventListener('click', () => {
-            const asset = assetData[currentAssetId];
-            if (confirm(`Are you sure you want to delete ${asset.name}??[TRUNCATED]
+        // Export button functionality
+        (function() {
+            const exportBtn = document.querySelector('.btn-export');
+            
+            exportBtn.addEventListener('click', function() {
+                const selectedProducts = [];
+                document.querySelectorAll('.product-card h3').forEach(h3 => {
+                    selectedProducts.push(h3.textContent);
+                });
+                
+                const destination = document.getElementById('destination').value;
+                const dateInput = document.querySelector('.datetime-group input[placeholder="Date"]');
+                const date = dateInput ? dateInput.value : '9/10/2021';
+                
+                showFakeToast(`${selectedProducts.join(', ')} to ${destination} on ${date}`);
+                
+                this.textContent = 'Exporting...';
+                setTimeout(() => {
+                    this.textContent = 'Export Bundle';
+                }, 2000);
+            });
+        })();
+    </script>
+    <div data-toast-container></div>
+</body>
+</html>
