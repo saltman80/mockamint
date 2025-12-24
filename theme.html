@@ -1,39 +1,15 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Theme and Input page for MockaMint Studio - Design your website with AI-powered tools">
-    <title>Theme and Input | MockaMint Studio</title>
-    <link rel="canonical" href="https://mockamintstudio.com/theme">
+    <title>Theme and Input - MockaMint Studio</title>
+    <meta name="description" content="Create your custom product designs with MockaMint Studio. Enter your theme, select styles, upload references, and generate photorealistic mockups.">
+    <link rel="canonical" href="https://mockamint.studio/theme.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --color-mint: #9DD9C8;
-            --color-charcoal: #2B2B2B;
-            --color-warm-gray: #666666;
-            --color-white: #FFFFFF;
-            --color-beige: #E8E3DB;
-            --color-off-white: #F8F8F8;
-            --color-light-gray: #CCCAC3;
-            --spacing-xs: 8px;
-            --spacing-sm: 12px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-2xl: 40px;
-            --spacing-3xl: 48px;
-            --spacing-4xl: 64px;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            --radius-full: 50%;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -41,361 +17,360 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--color-beige);
-            color: var(--color-charcoal);
-            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #E8E3DB;
+            background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px);
+            color: #2D2D2D;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
-        /* Skip Link */
         .skip-link {
             position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: var(--spacing-sm);
-            background-color: var(--color-mint);
-            color: var(--color-charcoal);
+            top: -40px;
+            left: 0;
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 16px;
             text-decoration: none;
-            font-weight: bold;
+            border-radius: 4px;
+            z-index: 1000;
         }
 
         .skip-link:focus {
-            left: 50%;
-            transform: translateX(-50%);
             top: 10px;
+            left: 10px;
         }
 
-        /* Navigation */
-        nav {
-            background-color: var(--color-white);
-            padding: var(--spacing-lg) var(--spacing-2xl);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        header {
+            background: #FFFFFF;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .nav-brand {
+        nav {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: var(--spacing-sm);
-            text-decoration: none;
-            color: var(--color-charcoal);
-            font-weight: bold;
+            padding: 20px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
             font-size: 18px;
-        }
-
-        .nav-brand svg {
-            width: 32px;
-            height: 32px;
-        }
-
-        .nav-links {
+            font-weight: 700;
+            color: #2D2D2D;
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: var(--spacing-xl);
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
             list-style: none;
         }
 
-        .nav-links a {
-            color: var(--color-charcoal);
+        .nav-menu a {
+            color: #2D2D2D;
             text-decoration: none;
             font-size: 15px;
+            font-weight: 500;
             transition: color 0.2s;
             display: flex;
             align-items: center;
-            gap: var(--spacing-xs);
+            gap: 6px;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--color-mint);
+        .nav-menu a:hover {
+            color: #666666;
         }
 
-        .nav-links svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
+        .nav-menu a[aria-current="page"] {
+            color: #9DD9C8;
         }
 
         .btn-login {
-            background-color: var(--color-mint);
-            color: var(--color-charcoal);
-            padding: var(--spacing-sm) var(--spacing-lg);
-            border-radius: var(--radius-xl);
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 14px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background 0.2s;
         }
 
         .btn-login:hover {
-            opacity: 0.9;
+            background: #8cc9b8;
         }
 
-        /* Main Container */
-        .container {
+        main {
             max-width: 1200px;
-            width: 100%;
             margin: 0 auto;
-            padding: var(--spacing-2xl);
-            flex: 1;
+            padding: 60px 32px 80px;
         }
 
-        /* Page Title */
         .page-title {
-            font-size: 56px;
-            font-weight: bold;
-            color: var(--color-charcoal);
-            margin-bottom: var(--spacing-xl);
-            line-height: 1.1;
+            font-size: 48px;
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 40px;
         }
 
-        /* Theme Input Section */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
         .theme-input-section {
-            background-color: var(--color-white);
-            border-radius: var(--radius-xl);
-            padding: var(--spacing-2xl);
-            margin-bottom: var(--spacing-xl);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .input-wrapper {
-            margin-bottom: var(--spacing-lg);
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .theme-input {
             width: 100%;
-            padding: var(--spacing-lg);
-            border: 2px solid var(--color-light-gray);
-            border-radius: var(--radius-md);
-            font-size: 20px;
-            color: var(--color-charcoal);
-            background-color: var(--color-white);
+            padding: 16px 20px;
+            font-size: 18px;
+            font-family: inherit;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            outline: none;
             transition: border-color 0.2s;
+            color: #2D2D2D;
         }
 
         .theme-input:focus {
-            outline: none;
-            border-color: var(--color-mint);
+            border-color: #9DD9C8;
         }
 
         .theme-input::placeholder {
-            color: var(--color-warm-gray);
-            opacity: 0.6;
+            color: #999999;
         }
 
-        /* Tag Selection */
-        .tag-selection {
+        .tags-section {
+            margin-top: 24px;
+        }
+
+        .tags-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .tag-chips {
             display: flex;
-            gap: var(--spacing-sm);
             flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .tag-btn {
-            background-color: var(--color-mint);
-            color: var(--color-charcoal);
-            padding: var(--spacing-sm) var(--spacing-lg);
-            border-radius: var(--radius-xl);
-            border: none;
+        .tag-chip {
+            background: #9DD9C8;
+            color: #2D2D2D;
+            padding: 8px 20px;
+            border-radius: 9999px;
             font-size: 14px;
             font-weight: 500;
+            border: none;
             cursor: pointer;
-            transition: opacity 0.2s, transform 0.2s;
+            transition: all 0.2s;
         }
 
-        .tag-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
+        .tag-chip:hover {
+            background: #8cc9b8;
         }
 
-        .tag-btn.selected {
-            background-color: var(--color-charcoal);
-            color: var(--color-white);
+        .tag-chip.is-selected {
+            background: #2D2D2D;
+            color: #FFFFFF;
         }
 
-        /* Upload Options Grid */
-        .upload-options {
+        .upload-section {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
+            gap: 20px;
         }
 
-        .upload-card {
-            background-color: var(--color-off-white);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-2xl);
+        .upload-tile {
+            background: #F5F5F5;
+            border: 2px dashed #D0D0D0;
+            border-radius: 16px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: var(--spacing-lg);
-            text-align: center;
+            gap: 16px;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 2px solid transparent;
+            transition: all 0.2s;
+            text-align: center;
         }
 
-        .upload-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .upload-card.active {
-            border-color: var(--color-mint);
-            background-color: var(--color-white);
+        .upload-tile:hover {
+            border-color: #9DD9C8;
+            background: #FFFFFF;
         }
 
         .upload-icon {
-            width: 64px;
-            height: 64px;
-            background-color: var(--color-mint);
-            border-radius: var(--radius-full);
+            width: 48px;
+            height: 48px;
+            background: #9DD9C8;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .upload-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--color-charcoal);
+            width: 24px;
+            height: 24px;
+            stroke: #2D2D2D;
         }
 
-        .upload-card-title {
+        .upload-label {
             font-size: 16px;
             font-weight: 600;
-            color: var(--color-charcoal);
+            color: #2D2D2D;
         }
 
-        /* Summary Card */
+        .url-input {
+            width: 100%;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-family: inherit;
+            border: 1px solid #D0D0D0;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+            margin-top: 8px;
+        }
+
+        .url-input:focus {
+            border-color: #9DD9C8;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
         .summary-card {
-            background-color: var(--color-white);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-sm);
-            max-width: 300px;
-            margin-left: auto;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .summary-title {
             font-size: 20px;
-            font-weight: bold;
-            color: var(--color-charcoal);
-            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 20px;
         }
 
-        .summary-row {
+        .summary-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: var(--spacing-sm);
-            font-size: 15px;
+            margin-bottom: 16px;
         }
 
         .summary-label {
-            color: var(--color-charcoal);
-            font-weight: 500;
+            font-size: 15px;
+            color: #666666;
         }
 
         .summary-value {
-            color: var(--color-charcoal);
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D2D2D;
         }
 
-        /* Prompt Tips */
         .prompt-tips {
-            background-color: var(--color-white);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-sm);
-            margin-top: var(--spacing-xl);
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .prompt-tips-header {
+        .prompt-tips-title {
             font-size: 20px;
-            font-weight: bold;
-            color: var(--color-charcoal);
-            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 20px;
         }
 
-        .prompt-tips-content {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: var(--spacing-lg);
-            align-items: start;
-        }
-
-        .tips-list {
+        .prompt-tips ul {
             list-style: none;
-            padding-left: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .tips-list li {
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-charcoal);
-            font-size: 14px;
-            line-height: 1.6;
+        .prompt-tips li {
+            font-size: 15px;
+            color: #666666;
+            padding-left: 24px;
             position: relative;
-            padding-left: var(--spacing-md);
         }
 
-        .tips-list li::before {
+        .prompt-tips li::before {
             content: "?";
             position: absolute;
-            left: 0;
-            color: var(--color-mint);
-            font-weight: bold;
+            left: 8px;
+            color: #2D2D2D;
+            font-weight: 700;
         }
 
-        .example-grid {
+        .thumbnail-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-sm);
+            gap: 16px;
+            margin-top: 24px;
         }
 
-        .example-item {
-            width: 72px;
-            height: 72px;
-            background-color: var(--color-light-gray);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s;
+        .thumbnail {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            background: #F5F5F5;
+            overflow: hidden;
             cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .example-item:hover {
+        .thumbnail:hover {
             transform: scale(1.05);
         }
 
-        .example-item svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--color-warm-gray);
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Footer */
         footer {
-            background-color: var(--color-white);
-            padding: var(--spacing-xl) var(--spacing-2xl);
-            margin-top: auto;
-            border-top: 1px solid var(--color-light-gray);
+            background: #FFFFFF;
+            padding: 24px 32px;
+            margin-top: 60px;
         }
 
         .footer-content {
@@ -408,498 +383,256 @@
 
         .footer-links {
             display: flex;
-            gap: var(--spacing-lg);
+            gap: 24px;
+            list-style: none;
         }
 
         .footer-links a {
-            color: var(--color-charcoal);
+            color: #666666;
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: var(--color-mint);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: var(--spacing-md);
-            align-items: center;
-        }
-
-        .footer-social a {
-            color: var(--color-charcoal);
-            transition: color 0.2s;
-        }
-
-        .footer-social a:hover {
-            color: var(--color-mint);
-        }
-
-        .footer-social svg {
-            width: 20px;
-            height: 20px;
+            color: #2D2D2D;
         }
 
         .footer-copyright {
-            text-align: right;
-            font-size: 13px;
-            color: var(--color-warm-gray);
-            margin-left: auto;
+            color: #999999;
+            font-size: 14px;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .upload-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
 
-            .prompt-tips-content {
+        .social-links a {
+            color: #666666;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #9DD9C8;
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid {
                 grid-template-columns: 1fr;
             }
 
-            .example-grid {
-                grid-template-columns: repeat(6, 1fr);
+            .sidebar {
+                position: static;
+            }
+
+            .upload-section {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: var(--spacing-md) var(--spacing-lg);
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .container {
-                padding: var(--spacing-lg);
-            }
-
             .page-title {
                 font-size: 36px;
             }
 
-            .theme-input-section {
-                padding: var(--spacing-lg);
+            .nav-menu {
+                gap: 16px;
+                font-size: 14px;
             }
 
-            .upload-options {
-                grid-template-columns: 1fr;
-            }
-
-            .summary-card {
-                max-width: 100%;
-                margin-left: 0;
-            }
-
-            .example-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .thumbnail-gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-content {
                 flex-direction: column;
-                gap: var(--spacing-md);
+                gap: 16px;
                 text-align: center;
-            }
-
-            .footer-copyright {
-                text-align: center;
-                margin-left: 0;
             }
         }
     </style>
 </head>
-<body>
+<body data-layout="full">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <nav role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-brand" aria-label="MockaMint Studio Home">
-            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M8 4L4 6V26L8 28V4Z" fill="#9DD9C8"/>
-                <path d="M24 4L28 6V26L24 28V4Z" fill="#9DD9C8"/>
-                <path d="M16 8L12 10V22L16 24L20 22V10L16 8Z" fill="#9DD9C8"/>
-            </svg>
-            <span>MockaMint Studio</span>
-        </a>
-        <ul class="nav-links">
-            <li>
-                <a href="index.html">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Features
-                </a>
-            </li>
-            <li>
-                <a href="#pricing">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    Pricing
-                </a>
-            </li>
-            <li>
-                <a href="#about">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    About
-                </a>
-            </li>
-        </ul>
-        <div class="nav-actions">
-            <a href="#login" class="btn-login">Login</a>
-        </div>
-    </nav>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation" data-nav>
+            <a href="index.html" class="logo" data-page="index.html">MockaMint Studio</a>
+            <ul class="nav-menu">
+                <li>
+                    <a href="index.html" data-page="index.html">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 6L8 2L14 6V13C14 13.2652 13.8946 13.5196 13.7071 13.7071C13.5196 13.8946 13.2652 14 13 14H3C2.73478 14 2.48043 13.8946 2.29289 13.7071C2.10536 13.5196 2 13.2652 2 13V6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Features
+                    </a>
+                </li>
+                <li>
+                    <a href="theme.html" data-page="theme.html" aria-current="page">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12 2H4C2.89543 2 2 2.89543 2 4V12C2 13.1046 2.89543 14 4 14H12C13.1046 14 14 13.1046 14 12V4C14 2.89543 13.1046 2 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pricing
+                    </a>
+                </li>
+                <li>
+                    <a href="product.html" data-page="product.html">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 10.5C9.38071 10.5 10.5 9.38071 10.5 8C10.5 6.61929 9.38071 5.5 8 5.5C6.61929 5.5 5.5 6.61929 5.5 8C5.5 9.38071 6.61929 10.5 8 10.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        About
+                    </a>
+                </li>
+                <li><a href="#" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main id="main-content" role="main">
-        <div class="container">
-            <h1 class="page-title">Theme and Input</h1>
+        <h1 class="page-title">Theme and Input</h1>
 
-            <section class="theme-input-section" aria-labelledby="theme-input-heading">
-                <h2 id="theme-input-heading" class="visually-hidden">Theme Selection</h2>
-                <div class="input-wrapper">
+        <div class="content-grid">
+            <div class="main-content">
+                <section class="theme-input-section" aria-labelledby="theme-heading">
+                    <h2 id="theme-heading" class="sr-only">Theme input</h2>
                     <input 
                         type="text" 
-                        id="theme-input"
                         class="theme-input" 
                         placeholder="Mint minimal geometry" 
-                        aria-label="Enter your website theme"
-                        value="Mint minimal geometry"
+                        aria-label="Enter your design theme"
+                        id="theme-text-input"
                     >
-                </div>
-                <div class="tag-selection" role="group" aria-label="Theme tag selection">
-                    <button class="tag-btn selected" data-tag="minimalist">Minimalist</button>
-                    <button class="tag-btn selected" data-tag="geometric">Geometric</button>
-                    <button class="tag-btn selected" data-tag="modern">Modern</button>
-                    <button class="tag-btn selected" data-tag="young-adults">Young Adults</button>
-                </div>
-            </section>
-
-            <section class="upload-options" aria-labelledby="upload-heading">
-                <h2 id="upload-heading" class="visually-hidden">Upload Options</h2>
-                
-                <article class="upload-card" role="button" tabindex="0" aria-label="Drag and drop files">
-                    <div class="upload-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    
+                    <div class="tags-section">
+                        <label class="tags-label">Style</label>
+                        <div class="tag-chips" role="group" aria-label="Style tags">
+                            <button class="tag-chip is-selected" data-chip="minimalist">Minimalist</button>
+                            <button class="tag-chip is-selected" data-chip="geometric">Geometric</button>
+                            <button class="tag-chip is-selected" data-chip="modern">Modern</button>
+                            <button class="tag-chip is-selected" data-chip="young-adults">Young Adults</button>
+                        </div>
                     </div>
-                    <h3 class="upload-card-title">Drag and Drop Files</h3>
-                </article>
+                </section>
 
-                <article class="upload-card" role="button" tabindex="0" aria-label="Choose files from device">
-                    <div class="upload-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="13 2 13 9 20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                <section class="upload-section" aria-labelledby="upload-heading">
+                    <h2 id="upload-heading" class="sr-only">Upload reference images</h2>
+                    
+                    <div class="upload-tile" tabindex="0" role="button" aria-label="Drag and drop files">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 16C5.89543 16 5 15.1046 5 14C5 12.8954 5.89543 12 7 12C7.55228 12 8 11.5523 8 11V4M8 4L5 7M8 4L11 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 16C18.1046 16 19 15.1046 19 14C19 12.8954 18.1046 12 17 12C16.4477 12 16 11.5523 16 11V4M16 4L19 7M16 4L13 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="upload-label">Drag and Drop Files</span>
                     </div>
-                    <h3 class="upload-card-title">Choose Files</h3>
-                </article>
 
-                <article class="upload-card" role="button" tabindex="0" aria-label="Import from URL">
-                    <div class="upload-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div class="upload-tile" tabindex="0" role="button" aria-label="Choose files from device">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 3V7C14 7.26522 14.1054 7.51957 14.2929 7.70711C14.4804 7.89464 14.7348 8 15 8H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H14L19 8V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="upload-label">Choose Files</span>
                     </div>
-                    <h3 class="upload-card-title">Import from URL</h3>
-                </article>
-            </section>
 
-            <aside class="summary-card" aria-labelledby="summary-heading">
-                <h2 id="summary-heading" class="summary-title">Summary</h2>
-                <div class="summary-row">
-                    <span class="summary-label">Progress:</span>
-                    <span class="summary-value">20%</span>
-                </div>
-                <div class="summary-row">
-                    <span class="summary-label">Estimated Time:</span>
-                    <span class="summary-value">2 mins</span>
+                    <div class="upload-tile" tabindex="0" role="button" aria-label="Import from URL">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.47L11.75 5.18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 11C13.5705 10.4259 13.0226 9.95083 12.3934 9.60707C11.7643 9.26331 11.0685 9.05889 10.3533 9.00768C9.63819 8.95646 8.92037 9.05965 8.24861 9.31023C7.57685 9.5608 6.96689 9.95303 6.46 10.46L3.46 13.46C2.54918 14.403 2.04519 15.6661 2.05659 16.977C2.06798 18.288 2.59382 19.5421 3.52086 20.4691C4.44791 21.3962 5.70197 21.922 7.01295 21.9334C8.32393 21.9448 9.58694 21.4408 10.53 20.53L12.24 18.82" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="upload-label">Import from URL</span>
+                    </div>
+                </section>
+
+                <section class="prompt-tips" aria-labelledby="tips-heading">
+                    <h2 id="tips-heading" class="prompt-tips-title">Prompt Tips</h2>
+                    <ul>
+                        <li>Upload reference images that match your desired style</li>
+                        <li>Palette: soft black, warm gray, and mint</li>
+                        <li>Use descriptive terms: friendly modern sans serif</li>
+                    </ul>
+
+                    <div class="thumbnail-gallery" role="list" aria-label="Reference image gallery">
+                        <div class="thumbnail" role="listitem" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop" alt="Minimal geometric design reference">
+                        </div>
+                        <div class="thumbnail" role="listitem" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1634973357973-f2ed2657db3c?w=400&h=400&fit=crop" alt="Modern mint pattern reference">
+                        </div>
+                        <div class="thumbnail" role="listitem" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=400&h=400&fit=crop" alt="Geometric shapes reference">
+                        </div>
+                        <div class="thumbnail" role="listitem" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1557672199-6903afd6e5f5?w=400&h=400&fit=crop" alt="Clean design reference">
+                        </div>
+                        <div class="thumbnail" role="listitem" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1557672199-6903afd6e5f1?w=400&h=400&fit=crop" alt="Minimalist pattern reference">
+                        </div>
+                        <div class="thumbnail" role="listitem" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=400&h=400&fit=crop" alt="Color palette reference">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar" role="complementary" aria-label="Summary information" data-sidebar="summary">
+                <div class="summary-card">
+                    <h2 class="summary-title">Summary</h2>
+                    <div class="summary-item" data-progress="fake">
+                        <span class="summary-label">Progress:</span>
+                        <span class="summary-value"><span data-progress-bar>20%</span></span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Estimated Time:</span>
+                        <span class="summary-value">2 mins</span>
+                    </div>
                 </div>
             </aside>
-
-            <section class="prompt-tips" aria-labelledby="tips-heading">
-                <div class="prompt-tips-content">
-                    <div>
-                        <h2 id="tips-heading" class="prompt-tips-header">Prompt Tips</h2>
-                        <ul class="tips-list">
-                            <li>Uploads all thumbnails norramiers</li>
-                            <li>Palette: soft black, warm gray, and mint</li>
-                            <li>Use other examplen: friendly modern sans serif</li>
-                        </ul>
-                    </div>
-                    <div class="example-grid" role="group" aria-label="Example designs">
-                        <button class="example-item" aria-label="Example design 1">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                        <button class="example-item" aria-label="Example design 2">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                        <button class="example-item" aria-label="Example design 3">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                        <button class="example-item" aria-label="Example design 4">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                        <button class="example-item" aria-label="Example design 5">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                        <button class="example-item" aria-label="Example design 6">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
-                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 
     <footer role="contentinfo">
         <div class="footer-content">
-            <nav class="footer-links" aria-label="Footer navigation">
-                <a href="#contact">Contact</a>
-                <a href="#terms">Terms</a>
-                <a href="#privacy">Privacy</a>
-            </nav>
-            <div class="footer-social" role="group" aria-label="Social media links">
+            <ul class="footer-links">
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+            <div class="social-links">
                 <a href="#facebook" aria-label="Facebook">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                 </a>
                 <a href="#twitter" aria-label="Twitter">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                     </svg>
                 </a>
                 <a href="#instagram" aria-label="Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"/>
-                        <circle cx="12" cy="12" r="4" stroke-width="2"/>
-                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                 </a>
                 <a href="#youtube" aria-label="YouTube">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
-                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#E8E3DB"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
                 </a>
             </div>
-            <div class="footer-copyright">
-                ? 2024 MockaMint Studio
-            </div>
+            <p class="footer-copyright">? 2024 MockaMint Studio</p>
         </div>
     </footer>
 
-    <script>
-        // Active navigation highlighting
-        (function() {
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            navLinks.forEach(link => {
-                const linkPath = new URL(link.href).pathname;
-                if (currentPath === linkPath || (currentPath.includes('theme') && linkPath.includes('theme'))) {
-                    link.classList.add('active');
-                }
-            });
-        })();
-
-        // Tag button selection
-        const tagButtons = document.querySelectorAll('.tag-btn');
-        tagButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                this.classList.toggle('selected');
-                updateSummary();
-            });
-        });
-
-        // Upload card selection
-        const uploadCards = document.querySelectorAll('.upload-card');
-        uploadCards.forEach(card => {
-            card.addEventListener('click', function() {
-                uploadCards.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                updateSummary();
-            });
-
-            // Keyboard support
-            card.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
-        });
-
-        // Theme input handling
-        const themeInput = document.getElementById('theme-input');
-        themeInput.addEventListener('input', function() {
-            updateSummary();
-        });
-
-        // Example design selection
-        const exampleItems = document.querySelectorAll('.example-item');
-        exampleItems.forEach((item, index) => {
-            item.addEventListener('click', function() {
-                console.log('Example design selected:', index + 1);
-                // Future: Load example design into input
-            });
-        });
-
-        // Update summary based on selections
-        function updateSummary() {
-            const selectedTags = document.querySelectorAll('.tag-btn.selected').length;
-            const activeUpload = document.querySelector('.upload-card.active');
-            const inputValue = themeInput.value.trim();
-            
-            let progress = 0;
-            if (inputValue.length > 0) progress += 10;
-            if (selectedTags > 0) progress += 5 * selectedTags;
-            if (activeUpload) progress += 15;
-            
-            progress = Math.min(progress, 100);
-            
-            const progressValue = document.querySelector('.summary-value');
-            if (progressValue) {
-                progressValue.textContent = progress + '%';
-            }
-            
-            // Estimate time based on progress
-            const timeValue = document.querySelectorAll('.summary-value')[1];
-            if (timeValue) {
-                const estimatedMins = Math.max(1, Math.ceil((100 - progress) / 20));
-                timeValue.textContent = estimatedMins + ' min' + (estimatedMins > 1 ? 's' : '');
-            }
-        }
-
-        // Initialize summary
-        updateSummary();
-
-        // Drag and drop functionality
-        const dragDropCard = uploadCards[0];
-        
-        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            dragDropCard.addEventListener(eventName, preventDefaults, false);
-        });
-
-        function preventDefaults(e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dragDropCard.addEventListener(eventName, highlight, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            dragDropCard.addEventListener(eventName, unhighlight, false);
-        });
-
-        function highlight() {
-            dragDropCard.style.borderColor = 'var(--color-mint)';
-            dragDropCard.style.backgroundColor = 'var(--color-white)';
-        }
-
-        function unhighlight() {
-            dragDropCard.style.borderColor = 'transparent';
-            dragDropCard.style.backgroundColor = 'var(--color-off-white)';
-        }
-
-        dragDropCard.addEventListener('drop', handleDrop, false);
-
-        function handleDrop(e) {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            
-            if (files.length > 0) {
-                console.log('Files dropped:', files.length);
-                dragDropCard.classList.add('active');
-                updateSummary();
-                // Future: Handle file upload
-            }
-        }
-
-        // Choose files functionality
-        const chooseFilesCard = uploadCards[1];
-        chooseFilesCard.addEventListener('click', function() {
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.multiple = true;
-            fileInput.accept = 'image/*,.pdf,.doc,.docx';
-            
-            fileInput.addEventListener('change', function(e) {
-                if (e.target.files.length > 0) {
-                    console.log('Files selected:', e.target.files.length);
-                    chooseFilesCard.classList.add('active');
-                    updateSummary();
-                    // Future: Handle file upload
-                }
-            });
-            
-            fileInput.click();
-        });
-
-        // Import from URL functionality
-        const urlCard = uploadCards[2];
-        urlCard.addEventListener('click', function() {
-            const url = prompt('Enter the URL:');
-            if (url && url.trim()) {
-                console.log('URL entered:', url);
-                urlCard.classList.add('active');
-                updateSummary();
-                // Future: Handle URL import
-            }
-        });
-
-        // Accessibility: Visual hidden utility
-        const style = document.createElement('style');
-        style.textContent = `
-            .visually-hidden {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                white-space: nowrap;
-                border: 0;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <div data-toast-container aria-live="polite"></div>
+    <script defer src="app.js"></script>
 </body>
 </html>
-```
